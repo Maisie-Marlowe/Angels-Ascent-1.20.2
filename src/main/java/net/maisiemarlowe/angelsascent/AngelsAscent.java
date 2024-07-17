@@ -12,6 +12,6 @@ public class AngelsAscent implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
+
 	}
 }
