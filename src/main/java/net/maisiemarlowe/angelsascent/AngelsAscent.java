@@ -2,6 +2,8 @@ package net.maisiemarlowe.angelsascent;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.maisiemarlowe.angelsascent.item.ModItemGroups;
+import net.maisiemarlowe.angelsascent.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +14,8 @@ public class AngelsAscent implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
 
 	}
 }
