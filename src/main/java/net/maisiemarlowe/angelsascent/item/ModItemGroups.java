@@ -17,6 +17,11 @@ public class ModItemGroups {
                 entries.add(ModItems.PURIFIED_ENDER_SHARD);
                 entries.add(ModItems.SOUL_POWDER);
                 entries.add(ModItems.PURIFIED_EYE_OF_ENDER);
+                entries.add(ModItems.COMPRESSED_ENDER_PEARL);
+                entries.add(ModItems.DOUBLE_COMPRESSED_ENDER_PEARL);
+                entries.add(ModItems.TRIPLE_COMPRESSED_ENDER_PEARL);
+                entries.add(ModItems.ULTRA_COMPRESSED_ENDER_PEARL);
+                entries.add(ModItems.WINGS);
 
 
 

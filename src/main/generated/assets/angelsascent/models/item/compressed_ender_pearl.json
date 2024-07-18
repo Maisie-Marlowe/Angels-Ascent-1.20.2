@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "angelsascent:item/compressed_ender_pearl"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "angelsascent:double_compressed_ender_pearl"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DDD",
+    "DDD"
+  ],
+  "result": {
+    "item": "angelsascent:triple_compressed_ender_pearl"
+  },
+  "show_notification": true
+}

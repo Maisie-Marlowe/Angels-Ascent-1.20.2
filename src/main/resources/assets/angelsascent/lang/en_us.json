@@ -3,6 +3,10 @@
   "item.angelsascent.ender_shard": "Ender Shard",
   "item.angelsascent.purified_ender_shard": "Purified Ender Shard",
   "item.angelsascent.soul_powder": "Soul Powder",
+  "item.angelsascent.compressed_ender_pearl": "Compressed Ender Pearl",
+  "item.angelsascent.double_compressed_ender_pearl": "Double Compressed Ender Pearl",
+  "item.angelsascent.triple_compressed_ender_pearl": "Triple Compressed Ender Pearl",
+  "item.angelsascent.ultra_compressed_ender_pearl": "Ultra Compressed Ender Pearl",
 
   "itemgroup.angelsascent": "Angel's Ascent Mod"
 

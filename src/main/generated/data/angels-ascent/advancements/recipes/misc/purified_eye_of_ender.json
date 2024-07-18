@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purified_ender_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:purified_ender_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:soul_powder"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:purified_eye_of_ender"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_compressed_ender_pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:ultra_compressed_ender_pearl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purified_ender_shard",
+      "has_ultra_compressed_ender_pearl",
+      "has_soul_powder"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:purified_eye_of_ender"
+    ]
+  },
+  "sends_telemetry_event": false
+}

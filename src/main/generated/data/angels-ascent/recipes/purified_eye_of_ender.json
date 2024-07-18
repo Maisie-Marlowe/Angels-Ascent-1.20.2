@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "angelsascent:purified_ender_shard"
+    },
+    "S": {
+      "item": "angelsascent:soul_powder"
+    },
+    "U": {
+      "item": "angelsascent:ultra_compressed_ender_pearl"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PUS",
+    "SSS"
+  ],
+  "result": {
+    "item": "angelsascent:purified_eye_of_ender"
+  },
+  "show_notification": true
+}
