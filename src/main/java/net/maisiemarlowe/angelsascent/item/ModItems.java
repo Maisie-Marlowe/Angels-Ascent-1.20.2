@@ -3,6 +3,8 @@ package net.maisiemarlowe.angelsascent.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.maisiemarlowe.angelsascent.AngelsAscent;
+import net.maisiemarlowe.angelsascent.item.custom.*;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -18,8 +20,28 @@ public class ModItems {
     public static final Item DOUBLE_COMPRESSED_ENDER_PEARL = registerItem("double_compressed_ender_pearl", new Item(new FabricItemSettings()));
     public static final Item TRIPLE_COMPRESSED_ENDER_PEARL = registerItem("triple_compressed_ender_pearl", new Item(new FabricItemSettings()));
     public static final Item ULTRA_COMPRESSED_ENDER_PEARL = registerItem("ultra_compressed_ender_pearl", new Item(new FabricItemSettings()));
+    public static final Item HOLY_INGOT = registerItem("holy_ingot", new Item(new FabricItemSettings()));
+    public static final Item SOUL_FRAGMENT = registerItem("soul_fragment", new Item(new FabricItemSettings()));
 
-    public static final Item WINGS = registerItem("Angellic Wings", new Item(new FabricItemSettings()));
+    public static final Item HALO = registerItem("angelic_halo", new HaloArmorItem(ModArmorMaterials.HALO, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+
+    public static final Item HOLY_AXE = registerItem("holy_axe", new ModAxeItems(ModToolMaterials.HOLY_BAR,
+            4, -2.6f, true, new FabricItemSettings().fireproof())); //7 +6dmg 4 -1.8spd
+
+    public static final Item HOLY_PICKAXE = registerItem("holy_pickaxe", new ModPickaxeItems(ModToolMaterials.HOLY_BAR,
+            0, -2.4f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item HOLY_SWORD = registerItem("holy_sword", new ModSwordItems(ModToolMaterials.HOLY_BAR,
+            2, -1.6f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item HOLY_HOE = registerItem("holy_hoe", new ModHoeItems(ModToolMaterials.HOLY_BAR,
+            -6, 1.6f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item HOLY_SHOVEL = registerItem("holy_shovel", new ModShovelItems(ModToolMaterials.HOLY_BAR,
+            .5f, -2.6f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item ANGEL_WINGS = registerItem("angel_wings", new WingsItem(new FabricItemSettings()));
+
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(PURIFIED_EYE_OF_ENDER);
@@ -30,7 +52,11 @@ public class ModItems {
         entries.add(DOUBLE_COMPRESSED_ENDER_PEARL);
         entries.add(TRIPLE_COMPRESSED_ENDER_PEARL);
         entries.add(ULTRA_COMPRESSED_ENDER_PEARL);
-        entries.add(WINGS);
+        entries.add(HALO);
+        entries.add(HOLY_INGOT);
+        entries.add(HOLY_AXE);
+
+
     }
 
 

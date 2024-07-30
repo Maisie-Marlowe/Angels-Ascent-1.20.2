@@ -5,12 +5,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.maisiemarlowe.angelsascent.item.ModItems;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.item.ItemConvertible;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
-
-import java.util.List;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
 
@@ -71,5 +69,57 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ULTRA_COMPRESSED_ENDER_PEARL)));
 
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_AXE, 1)
+                .pattern("II ")
+                .pattern("IS ")
+                .pattern(" S ")
+                .input('I', ModItems.HOLY_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_AXE)));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_PICKAXE, 1)
+                .pattern("III")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.HOLY_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_PICKAXE)));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_SWORD, 1)
+                .pattern(" I ")
+                .pattern(" I ")
+                .pattern(" S ")
+                .input('I', ModItems.HOLY_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_SWORD)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_HOE, 1)
+                .pattern("II ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.HOLY_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_HOE)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_SHOVEL, 1)
+                .pattern(" I ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.HOLY_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_SHOVEL)));
+
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOUL_POWDER, 1)
+                .input(ModItems.SOUL_FRAGMENT, 1)
+                .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(ModItems.SOUL_POWDER))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOUL_POWDER)));
     }
 }

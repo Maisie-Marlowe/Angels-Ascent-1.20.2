@@ -1,13 +1,74 @@
 {
-  "item.angelsascent.purified_eye_of_ender": "Purified Eye of Ender",
-  "item.angelsascent.ender_shard": "Ender Shard",
-  "item.angelsascent.purified_ender_shard": "Purified Ender Shard",
-  "item.angelsascent.soul_powder": "Soul Powder",
-  "item.angelsascent.compressed_ender_pearl": "Compressed Ender Pearl",
-  "item.angelsascent.double_compressed_ender_pearl": "Double Compressed Ender Pearl",
-  "item.angelsascent.triple_compressed_ender_pearl": "Triple Compressed Ender Pearl",
-  "item.angelsascent.ultra_compressed_ender_pearl": "Ultra Compressed Ender Pearl",
+  "item.angelsascent.purified_eye_of_ender": [
+    {"text": "Purified Eye of Ender", "color": "#40E0D0"}
+  ],
 
-  "itemgroup.angelsascent": "Angel's Ascent Mod"
+  "item.angelsascent.ender_shard": "Ender Shard",
+
+  "item.angelsascent.purified_ender_shard": [
+    {"text": "Purified Ender Shard", "color": "#40E0D0"}
+  ],
+
+  "block.angelsascent.soul_ore": [
+    {"text": "Soul Ore", "color": "#00bfff"}
+  ],
+
+  "item.angelsascent.soul_fragment": [
+    {"text": "Soul Fragment", "color" : "#00bfff"}
+  ],
+
+  "item.angelsascent.soul_powder": [
+    {"text": "Soul Powder", "color" : "#00bfff"}
+  ],
+
+  "item.angelsascent.compressed_ender_pearl": [
+    {"text" :"Compressed Ender Pearl", "color" : "#32CD32"}
+  ],
+
+  "item.angelsascent.double_compressed_ender_pearl": [
+    {"text": "Double Compressed Ender Pearl", "color": "#228B22"}
+  ],
+
+  "item.angelsascent.triple_compressed_ender_pearl": [
+    {"text": "Triple Compressed Ender Pearl", "color": "#006400"}
+  ],
+
+  "item.angelsascent.ultra_compressed_ender_pearl": [
+    {"text": "Ultra Compressed Ender Pearl", "color": "#556B2F"}
+  ],
+
+  "item.angelsascent.holy_ingot": [
+    {"text":"Holy Ingot", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.angelic_halo": [
+    {"text":"Halo", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.holy_axe": [
+    {"text":"Holy Axe", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.holy_pickaxe": [
+    {"text":"Holy Pickaxe", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.holy_sword": [
+    {"text":"Holy Sword", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.holy_hoe": [
+    {"text":"Holy Hoe", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.holy_shovel": [
+    {"text":"Holy Shovel", "color": "#ffdf00"}
+  ],
+
+
+
+  "itemgroup.angelsascent": "Angel's Ascent Mod",
+
+  "effect.angelsascent.halo_effect": "Halo"
 
 }

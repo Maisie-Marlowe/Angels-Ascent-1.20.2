@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "angelsascent:soul_fragment"
+    }
+  ],
+  "result": {
+    "item": "angelsascent:soul_powder"
+  }
+}

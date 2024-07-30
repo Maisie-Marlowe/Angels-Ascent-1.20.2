@@ -2,10 +2,12 @@ package net.maisiemarlowe.angelsascent.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.maisiemarlowe.angelsascent.block.ModBlocks;
 import net.maisiemarlowe.angelsascent.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -14,7 +16,10 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SOUL_ORE);
+        //BlockStateModelGenerator.BlockTexturePool soul_ore_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SOUL_ORE);
+
+
     }
 
     @Override
@@ -27,7 +32,16 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DOUBLE_COMPRESSED_ENDER_PEARL, Models.GENERATED);
         itemModelGenerator.register(ModItems.TRIPLE_COMPRESSED_ENDER_PEARL, Models.GENERATED);
         itemModelGenerator.register(ModItems.ULTRA_COMPRESSED_ENDER_PEARL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HOLY_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SOUL_FRAGMENT, Models.GENERATED);
 
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.HALO));
+
+        itemModelGenerator.register(ModItems.HOLY_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.HOLY_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.HOLY_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.HOLY_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.HOLY_SHOVEL, Models.HANDHELD);
 
 
     }
