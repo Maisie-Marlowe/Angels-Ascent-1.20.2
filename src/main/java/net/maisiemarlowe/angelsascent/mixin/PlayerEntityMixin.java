@@ -1,7 +1,8 @@
 package net.maisiemarlowe.angelsascent.mixin;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.maisiemarlowe.angelsascent.interfaces.IClientPlayerEntityMixin;
 import net.maisiemarlowe.angelsascent.item.ModItems;
+import net.minecraft.client.input.Input;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,12 +17,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin {
 
+    public Input input;
+
     @Shadow
     public abstract ItemStack getEquippedStack(EquipmentSlot slot);
 
     @Shadow
     public abstract PlayerAbilities getAbilities();
 
+    private boolean startFlying = false;
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
@@ -30,7 +34,9 @@ public abstract class PlayerEntityMixin {
         ItemStack chestStack = player.getEquippedStack(EquipmentSlot.CHEST);
         boolean hasWingsEquipped = chestStack.isOf(ModItems.ANGEL_WINGS) || chestStack.isOf(ModItems.DEVIL_WINGS);
 
-
+        if(player instanceof IClientPlayerEntityMixin mixin) {
+            startFlying = mixin.isDoubleJumpActive();
+        }
 
         if (hasWingsEquipped) {
             if(player.isOnGround() || player.hasVehicle()) {
@@ -64,7 +70,9 @@ public abstract class PlayerEntityMixin {
 
         // Allow flight if the player is using the wings
         PlayerAbilities abilities = player.getAbilities();
-        abilities.flying = true;
+        abilities.flying = startFlying;
+
+
         if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ANGEL_WINGS)) {
             //adjust flight speed
             float flightSpeed = 0.15f;
