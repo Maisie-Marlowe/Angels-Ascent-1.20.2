@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "angelsascent:soul_ore"
+  },
+  "result": "angelsascent:soul_ore"
+}

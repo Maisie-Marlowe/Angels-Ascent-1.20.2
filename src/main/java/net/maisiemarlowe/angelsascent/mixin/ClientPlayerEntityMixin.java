@@ -1,5 +1,7 @@
 package net.maisiemarlowe.angelsascent.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.maisiemarlowe.angelsascent.interfaces.IClientPlayerEntityMixin;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -8,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPlayerEntity.class)
+@Environment(EnvType.CLIENT)
 public abstract class ClientPlayerEntityMixin implements IClientPlayerEntityMixin {
 
     private boolean doubleJumpActive = false;
@@ -34,6 +37,10 @@ public abstract class ClientPlayerEntityMixin implements IClientPlayerEntityMixi
             }
         } else {
             jumpPressed = false;
+        }
+        //reset double jump state when on the ground
+        if (player.isOnGround() && doubleJumpActive) {
+            doubleJumpActive = false;
         }
     }
 

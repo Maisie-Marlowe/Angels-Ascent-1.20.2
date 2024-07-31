@@ -2,18 +2,22 @@ package net.maisiemarlowe.angelsascent.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.maisiemarlowe.angelsascent.block.ModBlocks;
 import net.maisiemarlowe.angelsascent.item.ModItems;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
 public class ModRecipeProvider extends FabricRecipeProvider {
 
-    //private static final List<ItemConvertible> xxx_SMELTABLES = List.of(ModItems/ModBlocks,);
-    //private static final List<ItemConvertible> xxx_BLASTABLES = List.of(ModItems/ModBlocks,);
+    private static final List<ItemConvertible> ORE_SMELTABLES = List.of(ModBlocks.SOUL_ORE);
+    private static final List<ItemConvertible> ORE_BLASTABLES = List.of(ModBlocks.SOUL_ORE);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -21,8 +25,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        //offerSmelting(exporter, xxx_SMELTABLES, RecipeCategory.MISC, ModItems., 0.7f, 200, "");
-        //offerBlasting(exporter, xxx_SMELTABLES, RecipeCategory.MISC, ModItems., 0.7f, 100, "");
+        offerSmelting(exporter, ORE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SOUL_ORE, 0.7f, 200, "");
+        offerBlasting(exporter, ORE_BLASTABLES, RecipeCategory.MISC, ModBlocks.SOUL_ORE, 0.7f, 100, "");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PURIFIED_EYE_OF_ENDER, 1)
                 .pattern("PPP")
@@ -121,5 +125,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ModItems.SOUL_FRAGMENT, 1)
                 .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(ModItems.SOUL_POWDER))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOUL_POWDER)));
+
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_INGOT, 1)
+                .pattern(" I ")
+                .pattern(" S ")
+                .pattern(" SS")
+                .input('I', ModItems.SOUL_POWDER)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_INGOT)));
+
     }
 }

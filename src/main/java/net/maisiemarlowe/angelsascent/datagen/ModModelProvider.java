@@ -35,6 +35,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HOLY_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.SOUL_FRAGMENT, Models.GENERATED);
 
+
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.HALO));
 
         itemModelGenerator.register(ModItems.HOLY_AXE, Models.HANDHELD);
@@ -42,6 +43,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HOLY_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.HOLY_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.HOLY_SHOVEL, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.ANGEL_WINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEVIL_WINGS, Models.GENERATED);
 
 
     }

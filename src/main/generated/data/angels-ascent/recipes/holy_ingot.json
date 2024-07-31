@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "angelsascent:soul_powder"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " I ",
+    " S ",
+    " SS"
+  ],
+  "result": {
+    "item": "angelsascent:holy_ingot"
+  },
+  "show_notification": true
+}

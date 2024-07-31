@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -34,64 +35,59 @@ public abstract class PlayerEntityMixin {
         ItemStack chestStack = player.getEquippedStack(EquipmentSlot.CHEST);
         boolean hasWingsEquipped = chestStack.isOf(ModItems.ANGEL_WINGS) || chestStack.isOf(ModItems.DEVIL_WINGS);
 
-        if(player instanceof IClientPlayerEntityMixin mixin) {
+        if (player instanceof IClientPlayerEntityMixin mixin) {
             startFlying = mixin.isDoubleJumpActive();
         }
 
         if (hasWingsEquipped) {
-            if(player.isOnGround() || player.hasVehicle()) {
+            if (player.isOnGround() || player.hasVehicle()) {
+                // Ensure flying is disabled when on ground or in a vehicle
+                abilities.allowFlying = false;
                 abilities.flying = false;
-            }
-            else {
+            } else {
                 handleWingsFlight(player);
             }
-
         } else {
-            //ensures the player is not in flying mode if no wings are equipped
-            if(abilities.flying)
-            defaultFlight(player);
+            // Ensure flying is disabled if no wings are equipped
+            if (abilities.allowFlying) {
+                defaultFlight(player);
+            }
         }
+
+        // If no wings are equipped, disable flying
         if (!player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ANGEL_WINGS) && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.DEVIL_WINGS)) {
+            abilities.allowFlying = false;
             abilities.flying = false;
         }
     }
 
     private void defaultFlight(PlayerEntity player) {
-        World world = player.getWorld();
         PlayerAbilities abilities = player.getAbilities();
         float defaultFlightSpeed = 0.05F;
         abilities.setFlySpeed(defaultFlightSpeed);
-
-        //abilities.allowFlying = false;
+        abilities.allowFlying = false; // Disallow flight when not using wings
     }
 
     private void handleWingsFlight(PlayerEntity player) {
-        World world = player.getWorld();
-
-        // Allow flight if the player is using the wings
         PlayerAbilities abilities = player.getAbilities();
+        // Allow flight if wings are equipped and flying is active
+        abilities.allowFlying = true;
         abilities.flying = startFlying;
 
-
         if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ANGEL_WINGS)) {
-            //adjust flight speed
+            // Adjust flight speed for angel wings
             float flightSpeed = 0.15f;
             abilities.setFlySpeed(flightSpeed);
         } else if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.DEVIL_WINGS)) {
-            //adjust flight speed
+            // Adjust flight speed for devil wings
             float flightSpeed = 0.3f;
             abilities.setFlySpeed(flightSpeed);
-        } else{
-            abilities.flying = false;
         }
 
-
-        // Handle flight mechanics
+        // Ensure the player is not flying if on the ground or in a vehicle
         if (player.isOnGround() || player.hasVehicle()) {
+            abilities.allowFlying = false;
             abilities.flying = false;
-            return; // Skip flight if on ground or in a vehicle
         }
     }
-
-
 }
