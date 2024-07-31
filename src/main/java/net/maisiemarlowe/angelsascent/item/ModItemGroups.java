@@ -36,7 +36,8 @@ public class ModItemGroups {
                 entries.add(ModItems.HOLY_HOE);
                 entries.add(ModItems.HOLY_SWORD);
 
-                //entries.add(ModItems.ANGEL_WINGS);
+                entries.add(ModItems.ANGEL_WINGS);
+                entries.add(ModItems.DEVIL_WINGS);
 
 
 

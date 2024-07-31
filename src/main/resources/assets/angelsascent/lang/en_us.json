@@ -66,6 +66,16 @@
   ],
 
 
+  "item.angelsascent.angel_wings": [
+    {"text":"Angel Wings", "color": "#4169E1"}
+  ],
+
+  "item.angelsascent.devil_wings": [
+    {"text":"Devil Wings", "color": "#8B0000"}
+  ],
+
+
+
 
   "itemgroup.angelsascent": "Angel's Ascent Mod",
 

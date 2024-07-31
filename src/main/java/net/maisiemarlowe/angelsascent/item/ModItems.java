@@ -40,7 +40,8 @@ public class ModItems {
     public static final Item HOLY_SHOVEL = registerItem("holy_shovel", new ModShovelItems(ModToolMaterials.HOLY_BAR,
             .5f, -2.6f, true, new FabricItemSettings().fireproof()));
 
-    //public static final Item ANGEL_WINGS = registerItem("angel_wings", new WingsItem(new FabricItemSettings()));
+    public static final Item ANGEL_WINGS = registerItem("angel_wings", new AngelWingsItem(new FabricItemSettings()));
+    public static final Item DEVIL_WINGS = registerItem("devil_wings", new AngelWingsItem(new FabricItemSettings()));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
