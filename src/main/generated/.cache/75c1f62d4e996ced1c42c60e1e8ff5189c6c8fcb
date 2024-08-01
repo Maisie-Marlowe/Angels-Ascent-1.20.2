@@ -1,4 +1,4 @@
-// 1.20.2	2024-07-31T22:17:48.2306515	Angel's Ascent/Model Definitions
+// 1.20.2	2024-08-01T07:56:18.151751	Angel's Ascent/Model Definitions
 a9c02c5b21a0e47542eebbf13844c7dcd8b121a6 assets\angelsascent\models\item\angelic_halo_emerald_trim.json
 55dff229a1e04c9ac9d765be5a4b67fe220a4047 assets\angelsascent\models\item\angelic_halo_quartz_trim.json
 8ddabf628fe8375839eb9b5ed6120cc700de21aa assets\angelsascent\models\item\soul_powder.json
@@ -8,6 +8,7 @@ a9c02c5b21a0e47542eebbf13844c7dcd8b121a6 assets\angelsascent\models\item\angelic
 f052fe2d96956ee7adb1f220b726ecd04a2c6272 assets\angelsascent\models\item\holy_shovel.json
 d9126904332edc7b5b4aa21652e33809535915f5 assets\angelsascent\models\item\angelic_halo_iron_trim.json
 f1f387dee179ebed798d8b49ce6fd0a92d44aa4c assets\angelsascent\models\item\angelic_halo_copper_trim.json
+6449c22c7dba265ba7141b36899083934abf56e1 assets\angelsascent\models\item\soul_ore.json
 63cdf7c75d86df2e8ae3679bff955c139cbce19a assets\angelsascent\blockstates\soul_ore.json
 b0eef3616b1bf901df0f4e5892de1119c2fd44dd assets\angelsascent\models\item\holy_pickaxe.json
 fd341c657b6416e26376b531dbadd455853aad2c assets\angelsascent\models\item\angelic_halo_netherite_trim.json
@@ -16,11 +17,11 @@ fd341c657b6416e26376b531dbadd455853aad2c assets\angelsascent\models\item\angelic
 0310a1cccbc7b83a960004d51c3842a512def0c2 assets\angelsascent\models\item\ultra_compressed_ender_pearl.json
 897be5d8e405087eb83dedffefaa78e52c6a67ec assets\angelsascent\models\item\purified_ender_shard.json
 ca52c0a720a9c282268a18f72902701aabf1f03d assets\angelsascent\models\item\purified_eye_of_ender.json
-1561f9440dbe6b44687e79087025fddd5b4baa73 assets\angelsascent\models\item\angelic_halo_amethyst_trim.json
 4c597d5d296b8a80509a97e9b6bf193a07836d32 assets\angelsascent\models\item\angelic_halo.json
+1561f9440dbe6b44687e79087025fddd5b4baa73 assets\angelsascent\models\item\angelic_halo_amethyst_trim.json
 16310415ec18ab009aa7eca7524fc5fa4023fd93 assets\angelsascent\models\item\holy_sword.json
-134ec42a9707e492804f5f06cf0e1370236ad921 assets\angelsascent\models\item\angelic_halo_redstone_trim.json
 10cc8e87517eb35aae3ccfd5560fbc13d649a733 assets\angelsascent\models\item\holy_axe.json
+134ec42a9707e492804f5f06cf0e1370236ad921 assets\angelsascent\models\item\angelic_halo_redstone_trim.json
 925ebb6c9f008a0474480c095fc88f01acf518f9 assets\angelsascent\models\item\holy_hoe.json
 b0665041f9f2c1a136c5e8acdf12cd263243f3e9 assets\angelsascent\models\item\angelic_halo_lapis_trim.json
 9ea44bb55e2030c980eece37bc4a61ab1ea73b98 assets\angelsascent\models\item\ender_shard.json
