@@ -15,12 +15,12 @@ import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final RegistryKey<PlacedFeature> END_SOUL_ORE_PLACED_KEY = registerKey("end_soul_ore_placed");
+    public static final RegistryKey<PlacedFeature> SOUL_ORE_PLACED_KEY = registerKey("soul_ore_placed");
 
-    public static void boostrap(Registerable<PlacedFeature> context) {
+    public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, END_SOUL_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.END_SOUL_ORE_KEY),
+        register(context, SOUL_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SOUL_ORE_KEY),
                 ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
     }

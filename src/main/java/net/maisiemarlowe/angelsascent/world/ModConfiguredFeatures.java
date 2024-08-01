@@ -19,19 +19,16 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final RegistryKey<ConfiguredFeature<?, ?>> END_SOUL_ORE_KEY = registerKey("end_soul_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SOUL_ORE_KEY = registerKey("soul_ore");
 
-    public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
-        RuleTest stoneReplacables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepslateReplacables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest netherReplacables = new TagMatchRuleTest(BlockTags.BASE_STONE_NETHER);
+    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest endReplacables = new BlockMatchRuleTest(Blocks.END_STONE);
 
 
         List<OreFeatureConfig.Target> endSoulOres =
                 List.of(OreFeatureConfig.createTarget(endReplacables, ModBlocks.SOUL_ORE.getDefaultState()));
 
-        register(context, END_SOUL_ORE_KEY, Feature.ORE, new OreFeatureConfig(endSoulOres, 12));
+        register(context, SOUL_ORE_KEY, Feature.ORE, new OreFeatureConfig(endSoulOres, 12));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

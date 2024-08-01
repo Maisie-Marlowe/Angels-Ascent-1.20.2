@@ -1,4 +1,4 @@
-// 1.20.2	2024-07-31T14:08:13.9291312	Angel's Ascent/Recipes
+// 1.20.2	2024-07-31T22:17:48.2256376	Angel's Ascent/Recipes
 44953d9faff19cd1cb49e72b63e025d10122b06f data\angels-ascent\recipes\holy_pickaxe.json
 b95b80bcae9bf930ec965ffdcc7fc2db19c97e23 data\angels-ascent\advancements\recipes\tools\holy_ingot.json
 5909ff671f4ef77976b15434bbc6748ea701096b data\angels-ascent\advancements\recipes\misc\double_compressed_ender_pearl.json
@@ -9,8 +9,8 @@ f5146afe4965c7c062354b23a9a606a271efe13b data\angels-ascent\advancements\recipes
 a94e960d48396d39691e2e4c44e70d26ca6267a7 data\angels-ascent\recipes\holy_shovel.json
 985a5994265cf4f32f34bb8491ede57e9d73a71f data\angels-ascent\recipes\holy_sword.json
 4e6890734a4f15be6c030869536379cb58c1f08b data\angels-ascent\recipes\holy_hoe.json
-685918602a040740f39ec2bf5f9bec1b40597a24 data\angels-ascent\recipes\ultra_compressed_ender_pearl.json
 7717f788296f562b1204d98406eafd922684e958 data\angels-ascent\advancements\recipes\misc\triple_compressed_ender_pearl.json
+685918602a040740f39ec2bf5f9bec1b40597a24 data\angels-ascent\recipes\ultra_compressed_ender_pearl.json
 6698430cc601a31a13b72cf4e1d909f91eafc3fc data\angels-ascent\recipes\holy_ingot.json
 947141a6cc5ce15f3851ca9275c2dc0943635454 data\angels-ascent\recipes\soul_ore_from_smelting_soul_ore.json
 3d5391d6c557decce3fa12aac691ac563f7bac25 data\angels-ascent\advancements\recipes\misc\soul_powder.json

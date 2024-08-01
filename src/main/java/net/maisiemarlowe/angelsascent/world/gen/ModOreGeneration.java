@@ -9,6 +9,6 @@ public class ModOreGeneration {
     public static void generateOres() {
 
         BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.END_SOUL_ORE_PLACED_KEY);
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.SOUL_ORE_PLACED_KEY);
     }
 }
