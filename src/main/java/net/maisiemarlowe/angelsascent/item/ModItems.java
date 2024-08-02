@@ -20,25 +20,50 @@ public class ModItems {
     public static final Item DOUBLE_COMPRESSED_ENDER_PEARL = registerItem("double_compressed_ender_pearl", new Item(new FabricItemSettings()));
     public static final Item TRIPLE_COMPRESSED_ENDER_PEARL = registerItem("triple_compressed_ender_pearl", new Item(new FabricItemSettings()));
     public static final Item ULTRA_COMPRESSED_ENDER_PEARL = registerItem("ultra_compressed_ender_pearl", new Item(new FabricItemSettings()));
+    public static final Item HOLY_NUGGET = registerItem("holy_nugget", new Item(new FabricItemSettings()));
+    public static final Item BLASPHEMOUS_NUGGET = registerItem("blasphemous_nugget", new Item(new FabricItemSettings()));
     public static final Item HOLY_INGOT = registerItem("holy_ingot", new Item(new FabricItemSettings()));
+    public static final Item BLASPHEMOUS_INGOT = registerItem("blasphemous_ingot", new Item(new FabricItemSettings()));
     public static final Item SOUL_FRAGMENT = registerItem("soul_fragment", new Item(new FabricItemSettings()));
 
     public static final Item HALO = registerItem("angelic_halo", new HaloArmorItem(ModArmorMaterials.HALO, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
 
-    public static final Item HOLY_AXE = registerItem("holy_axe", new ModAxeItems(ModToolMaterials.HOLY_BAR,
+
+    public static final Item SOUL_DRILL = registerItem("soul_drill", new ModPickaxeItems(ModToolMaterials.SOUL_INGOT,
+            5, -.3f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item HOLY_AXE = registerItem("holy_axe", new ModAxeItems(ModToolMaterials.HOLY_INGOT,
             4, -2.6f, true, new FabricItemSettings().fireproof())); //7 +6dmg 4 -1.8spd
 
-    public static final Item HOLY_PICKAXE = registerItem("holy_pickaxe", new ModPickaxeItems(ModToolMaterials.HOLY_BAR,
+    public static final Item HOLY_PICKAXE = registerItem("holy_pickaxe", new ModPickaxeItems(ModToolMaterials.HOLY_INGOT,
             0, -2.4f, true, new FabricItemSettings().fireproof()));
 
-    public static final Item HOLY_SWORD = registerItem("holy_sword", new ModSwordItems(ModToolMaterials.HOLY_BAR,
+    public static final Item HOLY_SWORD = registerItem("holy_sword", new ModSwordItems(ModToolMaterials.HOLY_INGOT,
             2, -1.6f, true, new FabricItemSettings().fireproof()));
 
-    public static final Item HOLY_HOE = registerItem("holy_hoe", new ModHoeItems(ModToolMaterials.HOLY_BAR,
+    public static final Item HOLY_HOE = registerItem("holy_hoe", new ModHoeItems(ModToolMaterials.HOLY_INGOT,
             -6, 1.6f, true, new FabricItemSettings().fireproof()));
 
-    public static final Item HOLY_SHOVEL = registerItem("holy_shovel", new ModShovelItems(ModToolMaterials.HOLY_BAR,
+    public static final Item HOLY_SHOVEL = registerItem("holy_shovel", new ModShovelItems(ModToolMaterials.HOLY_INGOT,
             .5f, -2.6f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item BLASPHEMOUS_AXE = registerItem("blasphemous_axe", new ModAxeItems(ModToolMaterials.BLASPHEMOUS_INGOT,
+            7, -2.3f, true, new FabricItemSettings().fireproof())); //7 +6dmg 4 -1.8spd
+
+    public static final Item BLASPHEMOUS_PICKAXE = registerItem("blasphemous_pickaxe", new ModPickaxeItems(ModToolMaterials.BLASPHEMOUS_INGOT,
+            3, -2.1f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item BLASPHEMOUS_DRILL = registerItem("blasphemous_drill", new ModPickaxeItems(ModToolMaterials.BLASPHEMOUS_DRILL,
+            7, -.3f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item BLASPHEMOUS_SWORD = registerItem("blasphemous_sword", new ModSwordItems(ModToolMaterials.BLASPHEMOUS_INGOT,
+            5, -1.3f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item BLASPHEMOUS_HOE = registerItem("blasphemous_hoe", new ModHoeItems(ModToolMaterials.BLASPHEMOUS_INGOT,
+            -6, 1.9f, true, new FabricItemSettings().fireproof()));
+
+    public static final Item BLASPHEMOUS_SHOVEL = registerItem("blasphemous_shovel", new ModShovelItems(ModToolMaterials.BLASPHEMOUS_INGOT,
+            3.5f, -2.3f, true, new FabricItemSettings().fireproof()));
 
     public static final Item ANGEL_WINGS = registerItem("angel_wings", new AngelWingsItem(new FabricItemSettings()));
     public static final Item DEVIL_WINGS = registerItem("devil_wings", new AngelWingsItem(new FabricItemSettings()));

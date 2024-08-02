@@ -1,3 +1,7 @@
-// 1.20.2	2024-08-01T07:56:18.1497513	Angel's Ascent/World Gen
-2aa96a2a0fe9d05e9bcb6222d978ff8312fd8640 data\angelsascent\worldgen\placed_feature\soul_ore_placed.json
-d9671eb02d8e034341cd9b0261b4af43b56a1ff0 data\angelsascent\worldgen\configured_feature\soul_ore.json
+// 1.20.2	2024-08-01T16:19:56.0545142	Angel's Ascent/World Gen
+1944ce581c9207db550c2030efec03f9596e8bd7 data\angelsascent\worldgen\configured_feature\blasphemous_ore.json
+cbba8ff10b78399ce65e74f90c51f086dd07d105 data\angelsascent\worldgen\configured_feature\holy_ore.json
+85ff9e595c9a5fb546d3011e6e84bc4786d8213b data\angelsascent\worldgen\placed_feature\soul_ore_placed.json
+7fdcc22df8bde80afa8432e5c075fefd381d9a34 data\angelsascent\worldgen\placed_feature\blasphemous_ore_placed.json
+73d97960e877f67d26430c6ec96c6254f3474289 data\angelsascent\worldgen\placed_feature\holy_ore_placed.json
+dd75bfea5d2fe5161b9fa86f4e20e7fbafe0fb10 data\angelsascent\worldgen\configured_feature\soul_ore.json

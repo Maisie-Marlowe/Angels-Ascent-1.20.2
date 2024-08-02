@@ -16,8 +16,8 @@ import java.util.List;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
 
-    private static final List<ItemConvertible> ORE_SMELTABLES = List.of(ModBlocks.SOUL_ORE);
-    private static final List<ItemConvertible> ORE_BLASTABLES = List.of(ModBlocks.SOUL_ORE);
+    private static final List<ItemConvertible> ORE_SMELTABLES = List.of(ModBlocks.SOUL_ORE, ModBlocks.HOLY_ORE, ModBlocks.BLASPHEMOUS_ORE);
+    private static final List<ItemConvertible> ORE_BLASTABLES = List.of(ModBlocks.SOUL_ORE, ModBlocks.HOLY_ORE, ModBlocks.BLASPHEMOUS_ORE);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -26,7 +26,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, ORE_SMELTABLES, RecipeCategory.MISC, ModBlocks.SOUL_ORE, 0.7f, 200, "");
-        offerBlasting(exporter, ORE_BLASTABLES, RecipeCategory.MISC, ModBlocks.SOUL_ORE, 0.7f, 100, "");
+        offerSmelting(exporter, ORE_SMELTABLES, RecipeCategory.MISC, ModBlocks.HOLY_ORE, 2.3f, 400, "");
+        offerSmelting(exporter, ORE_SMELTABLES, RecipeCategory.MISC, ModBlocks.BLASPHEMOUS_ORE, 3.1f, 600, "");
+
+        offerBlasting(exporter, ORE_BLASTABLES, RecipeCategory.MISC, ModBlocks.SOUL_ORE, 0.9f, 150, "");
+        offerBlasting(exporter, ORE_BLASTABLES, RecipeCategory.MISC, ModBlocks.HOLY_ORE, 3f, 350, "");
+        offerBlasting(exporter, ORE_BLASTABLES, RecipeCategory.MISC, ModBlocks.BLASPHEMOUS_ORE, 4f, 550, "");
+
+        offerSmelting(exporter, List.of(ModItems.ENDER_SHARD), RecipeCategory.MISC, ModItems.PURIFIED_ENDER_SHARD, 3.3f, 469, "");
+        offerBlasting(exporter, List.of(ModItems.ENDER_SHARD), RecipeCategory.MISC, ModItems.PURIFIED_ENDER_SHARD, 3.9f, 386, "");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PURIFIED_EYE_OF_ENDER, 1)
                 .pattern("PPP")
@@ -120,22 +128,133 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_SHOVEL)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BLASPHEMOUS_AXE, 1)
+                .pattern("II ")
+                .pattern("IS ")
+                .pattern(" S ")
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_AXE)));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BLASPHEMOUS_PICKAXE, 1)
+                .pattern("III")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_PICKAXE)));
+
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BLASPHEMOUS_SWORD, 1)
+                .pattern(" I ")
+                .pattern(" I ")
+                .pattern(" S ")
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_SWORD)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BLASPHEMOUS_HOE, 1)
+                .pattern("II ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_HOE)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.BLASPHEMOUS_SHOVEL, 1)
+                .pattern(" I ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_SHOVEL)));
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOUL_POWDER, 1)
                 .input(ModItems.SOUL_FRAGMENT, 1)
-                .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(ModItems.SOUL_POWDER))
+                .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOUL_POWDER)));
 
 
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.HOLY_INGOT, 1)
-                .pattern(" I ")
-                .pattern(" S ")
-                .pattern(" SS")
-                .input('I', ModItems.SOUL_POWDER)
-                .input('S', Items.STICK)
-                .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(Items.STICK))
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.ANGEL_WINGS, 1)
+                .pattern("PIP")
+                .pattern("MEM")
+                .pattern("I I")
+                .input('I', ModItems.HOLY_INGOT)
+                .input('P', ModItems.PURIFIED_EYE_OF_ENDER)
+                .input('E', Items.ELYTRA)
+                .input('M', Items.PHANTOM_MEMBRANE)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.ANGEL_WINGS)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.DEVIL_WINGS, 1)
+                .pattern("PIP")
+                .pattern("MAM")
+                .pattern("I I")
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .input('P', ModItems.PURIFIED_EYE_OF_ENDER)
+                .input('A', ModItems.ANGEL_WINGS)
+                .input('M', Items.PHANTOM_MEMBRANE)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DEVIL_WINGS)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BLASPHEMOUS_INGOT, 1)
+                .pattern("NNN")
+                .pattern("NHN")
+                .pattern("NNN")
+                .input('N', ModItems.BLASPHEMOUS_NUGGET)
+                .input('H', ModItems.HOLY_INGOT)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_INGOT)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HOLY_INGOT, 1)
+                .pattern("NNN")
+                .pattern("NPN")
+                .pattern("NNN")
+                .input('N', ModItems.HOLY_NUGGET)
+                .input('P', ModItems.PURIFIED_EYE_OF_ENDER)
+                .criterion(hasItem(ModItems.HOLY_NUGGET), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_INGOT)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.SOUL_DRILL, 1)
+                .pattern("  D")
+                .pattern("FPF")
+                .pattern("FF ")
+                .input('F', ModItems.SOUL_FRAGMENT)
+                .input('P', ModItems.SOUL_POWDER)
+                .input('D', Items.DIAMOND)
+                .criterion(hasItem(ModItems.SOUL_POWDER), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.SOUL_DRILL)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BLASPHEMOUS_DRILL, 1)
+                .pattern("  N")
+                .pattern("BHB")
+                .pattern("BB ")
+                .input('B', ModItems.BLASPHEMOUS_INGOT)
+                .input('N', ModItems.BLASPHEMOUS_NUGGET)
+                .input('H', ModItems.HOLY_INGOT)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_DRILL)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HALO, 1)
+                .pattern("HHH")
+                .pattern("   ")
+                .pattern("   ")
+                .input('H', ModItems.HOLY_INGOT)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HALO)));
+
+
+
+
+
 
     }
 }

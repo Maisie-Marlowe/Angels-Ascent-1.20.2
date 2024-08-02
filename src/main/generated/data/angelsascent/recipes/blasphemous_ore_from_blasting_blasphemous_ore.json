@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 550,
+  "experience": 4.0,
+  "ingredient": {
+    "item": "angelsascent:blasphemous_ore"
+  },
+  "result": "angelsascent:blasphemous_ore"
+}

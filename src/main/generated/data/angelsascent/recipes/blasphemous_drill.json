@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "angelsascent:blasphemous_ingot"
+    },
+    "H": {
+      "item": "angelsascent:holy_ingot"
+    },
+    "N": {
+      "item": "angelsascent:blasphemous_nugget"
+    }
+  },
+  "pattern": [
+    "  N",
+    "BHB",
+    "BB "
+  ],
+  "result": {
+    "item": "angelsascent:blasphemous_drill"
+  },
+  "show_notification": true
+}

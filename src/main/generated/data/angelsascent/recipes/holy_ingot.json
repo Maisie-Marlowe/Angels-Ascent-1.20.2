@@ -1,21 +1,36 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "I": {
-      "item": "angelsascent:soul_powder"
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "angelsascent:holy_nugget"
     },
-    "S": {
-      "item": "minecraft:stick"
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
+    },
+    {
+      "item": "angelsascent:holy_nugget"
     }
-  },
-  "pattern": [
-    " I ",
-    " S ",
-    " SS"
   ],
   "result": {
     "item": "angelsascent:holy_ingot"
-  },
-  "show_notification": true
+  }
 }

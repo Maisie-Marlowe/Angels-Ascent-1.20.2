@@ -13,16 +13,31 @@ import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
 import java.util.List;
+import java.util.Random;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SOUL_ORE_PLACED_KEY = registerKey("soul_ore_placed");
+    public static final RegistryKey<PlacedFeature> HOLY_ORE_PLACED_KEY = registerKey("holy_ore_placed");
+    public static final RegistryKey<PlacedFeature> BLASPHEMOUS_ORE_PLACED_KEY = registerKey("blasphemous_ore_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
+
+
         register(context, SOUL_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SOUL_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
+                ModOrePlacement.modifiersWithCount(8, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+
+        register(context, HOLY_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HOLY_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(8, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+
+        register(context, BLASPHEMOUS_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLASPHEMOUS_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(8, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+
+
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
@@ -33,4 +48,5 @@ public class ModPlacedFeatures {
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
+
 }

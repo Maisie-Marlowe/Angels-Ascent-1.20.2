@@ -6,8 +6,19 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    HOLY_BAR(5, 0, 15f, 6f, 26,
-            () -> Ingredient.ofItems(ModItems.HOLY_INGOT));
+
+
+    SOUL_INGOT(5, 0, 40f, 6f, 5,
+            () -> Ingredient.ofItems(ModItems.HOLY_INGOT)),
+
+    HOLY_INGOT(6, 0, 15f, 6f, 10,
+            () -> Ingredient.ofItems(ModItems.HOLY_INGOT)),
+
+    BLASPHEMOUS_INGOT(7, 0, 15f, 6f, 15,
+                              () -> Ingredient.ofItems(ModItems.BLASPHEMOUS_INGOT)),
+
+    BLASPHEMOUS_DRILL(7, 0, 45f, 6f, 15,
+                              () -> Ingredient.ofItems(ModItems.BLASPHEMOUS_INGOT));
 
 
     private final int miningLevel;

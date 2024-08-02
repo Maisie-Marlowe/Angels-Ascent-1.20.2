@@ -20,6 +20,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.SOUL_ORE)
+                .add(ModBlocks.HOLY_ORE)
+                .add(ModBlocks.BLASPHEMOUS_ORE)
         ;
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
@@ -46,8 +48,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         ;
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.SOUL_ORE)
         ;
+
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
+                .add(ModBlocks.HOLY_ORE)
+        ;
+
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
+                .add(ModBlocks.BLASPHEMOUS_ORE)
+        ;
+
     }
 }

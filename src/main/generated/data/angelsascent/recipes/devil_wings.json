@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "angelsascent:angel_wings"
+    },
+    "I": {
+      "item": "angelsascent:blasphemous_ingot"
+    },
+    "M": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "P": {
+      "item": "angelsascent:purified_eye_of_ender"
+    }
+  },
+  "pattern": [
+    "PIP",
+    "MEM",
+    "I I"
+  ],
+  "result": {
+    "item": "angelsascent:devil_wings"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 600,
+  "experience": 3.1,
+  "ingredient": {
+    "item": "angelsascent:holy_ore"
+  },
+  "result": "angelsascent:blasphemous_ore"
+}

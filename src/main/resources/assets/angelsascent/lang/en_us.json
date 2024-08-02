@@ -13,6 +13,14 @@
     {"text": "Soul Ore", "color": "#00bfff"}
   ],
 
+  "block.angelsascent.holy_ore": [
+    {"text": "Holy Ore", "color": "#FFD529"}
+  ],
+
+  "block.angelsascent.blasphemous_ore": [
+    {"text": "Blasphemous Ore", "color": "#DA25A4"}
+  ],
+
   "item.angelsascent.soul_fragment": [
     {"text": "Soul Fragment", "color" : "#00bfff"}
   ],
@@ -41,6 +49,18 @@
     {"text":"Holy Ingot", "color": "#ffdf00"}
   ],
 
+  "item.angelsascent.blasphemous_ingot": [
+    {"text":"Blasphemous Ingot", "color": "#DC143C"}
+  ],
+
+  "item.angelsascent.blasphemous_nugget": [
+    {"text":"Blasphemous Nugget", "color": "#DC143C"}
+  ],
+
+  "item.angelsascent.holy_nugget": [
+    {"text":"Holy Nugget", "color": "#ffdf00"}
+  ],
+
   "item.angelsascent.angelic_halo": [
     {"text":"Halo", "color": "#ffdf00"}
   ],
@@ -49,22 +69,50 @@
     {"text":"Holy Axe", "color": "#ffdf00"}
   ],
 
+  "item.angelsascent.blasphemous_axe": [
+    {"text":"Blasphemous Axe", "color": "#DC143C"}
+  ],
+
+  "item.angelsascent.soul_drill": [
+    {"text": "Soul Drill", "color" : "#00bfff"}
+  ],
+
+
   "item.angelsascent.holy_pickaxe": [
     {"text":"Holy Pickaxe", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.blasphemous_pickaxe": [
+    {"text":"Blasphemous Pickaxe", "color": "#DC143C"}
+  ],
+
+  "item.angelsascent.blasphemous_drill": [
+    {"text":"Blasphemous Drill", "color": "#DC143C"}
   ],
 
   "item.angelsascent.holy_sword": [
     {"text":"Holy Sword", "color": "#ffdf00"}
   ],
 
+  "item.angelsascent.blasphemous_sword": [
+    {"text":"Blasphemous Axe", "color": "#DC143C"}
+  ],
+
   "item.angelsascent.holy_hoe": [
     {"text":"Holy Hoe", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.blasphemous_hoe": [
+    {"text":"Blasphemous Axe", "color": "#DC143C"}
   ],
 
   "item.angelsascent.holy_shovel": [
     {"text":"Holy Shovel", "color": "#ffdf00"}
   ],
 
+  "item.angelsascent.blasphemous_shovel": [
+    {"text":"Blasphemous Axe", "color": "#DC143C"}
+  ],
 
   "item.angelsascent.angel_wings": [
     {"text":"Angel Wings", "color": "#FFFF66"}

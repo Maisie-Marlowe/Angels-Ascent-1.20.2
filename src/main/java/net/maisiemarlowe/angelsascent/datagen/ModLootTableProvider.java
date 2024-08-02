@@ -26,6 +26,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         //addDrop(ModBlocks.);
 
         addDrop(ModBlocks.SOUL_ORE, oreDrops(ModBlocks.SOUL_ORE, ModItems.SOUL_FRAGMENT)); //replace oreDrops with copperLikeOreDrops
+        addDrop(ModBlocks.HOLY_ORE, oreDrops(ModBlocks.HOLY_ORE, ModItems.HOLY_NUGGET));
+        addDrop(ModBlocks.BLASPHEMOUS_ORE, oreDrops(ModBlocks.BLASPHEMOUS_ORE, ModItems.BLASPHEMOUS_NUGGET));
 
     }
 

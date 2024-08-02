@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "angelsascent:holy_ingot"
+    },
+    "N": {
+      "item": "angelsascent:blasphemous_nugget"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NHN",
+    "NNN"
+  ],
+  "result": {
+    "item": "angelsascent:blasphemous_ingot"
+  },
+  "show_notification": true
+}

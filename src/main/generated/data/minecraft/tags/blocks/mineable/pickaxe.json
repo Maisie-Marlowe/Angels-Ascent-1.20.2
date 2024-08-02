@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "angelsascent:soul_ore"
+    "angelsascent:soul_ore",
+    "angelsascent:holy_ore",
+    "angelsascent:blasphemous_ore"
   ]
 }

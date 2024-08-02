@@ -1,5 +1,6 @@
 package net.maisiemarlowe.angelsascent.mixin;
 
+import net.maisiemarlowe.angelsascent.ModKeyBindings;
 import net.maisiemarlowe.angelsascent.interfaces.IClientPlayerEntityMixin;
 import net.maisiemarlowe.angelsascent.item.ModItems;
 import net.minecraft.client.input.Input;
@@ -7,9 +8,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,6 +28,13 @@ public abstract class PlayerEntityMixin {
     public abstract PlayerAbilities getAbilities();
 
     private boolean startFlying = false;
+    private int speedToggleState = 0;
+    private static final float SLOW_SPEED = 0.05F;
+    private static final float MEDIUM_SPEED = 0.15F;
+    private static final float FAST_SPEED = 0.30F;
+
+    // Variables to handle key press debounce
+    private boolean keyPreviouslyPressed = false;
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
@@ -35,6 +43,36 @@ public abstract class PlayerEntityMixin {
         ItemStack chestStack = player.getEquippedStack(EquipmentSlot.CHEST);
         boolean hasWingsEquipped = chestStack.isOf(ModItems.ANGEL_WINGS) || chestStack.isOf(ModItems.DEVIL_WINGS);
 
+        // Handle key press debounce
+        boolean keyPressed = ModKeyBindings.TOGGLE_WING_SPEED.isPressed();
+        if (hasWingsEquipped && keyPressed && !keyPreviouslyPressed) {
+            speedToggleState = (speedToggleState + 1) % 3;
+            String speedStatus;
+            Formatting speedColor;
+            switch (speedToggleState) {
+                case 0:
+                    speedStatus = "Slow";
+                    speedColor = Formatting.RED;
+                    break;
+                case 1:
+                    speedStatus = "Medium";
+                    speedColor = Formatting.YELLOW;
+                    break;
+                case 2:
+                default:
+                    speedStatus = "Fast";
+                    speedColor = Formatting.GREEN;
+                    break;
+            }
+            player.sendMessage(Text.literal("Flight Speed Toggled: ").formatted(Formatting.AQUA)
+                    .append(Text.literal(speedStatus).formatted(speedColor)), true);
+        }
+        keyPreviouslyPressed = keyPressed;
+
+        if (player.isCreative()) {
+            abilities.allowFlying = true;
+            return;
+        }
         if (player instanceof IClientPlayerEntityMixin mixin) {
             startFlying = mixin.isDoubleJumpActive();
         }
@@ -63,8 +101,7 @@ public abstract class PlayerEntityMixin {
 
     private void defaultFlight(PlayerEntity player) {
         PlayerAbilities abilities = player.getAbilities();
-        float defaultFlightSpeed = 0.05F;
-        abilities.setFlySpeed(defaultFlightSpeed);
+        abilities.setFlySpeed(SLOW_SPEED);
         abilities.allowFlying = false; // Disallow flight when not using wings
     }
 
@@ -74,14 +111,24 @@ public abstract class PlayerEntityMixin {
         abilities.allowFlying = true;
         abilities.flying = startFlying;
 
+        float flightSpeed = SLOW_SPEED;
+        switch (speedToggleState) {
+            case 1:
+                flightSpeed = MEDIUM_SPEED;
+                break;
+            case 2:
+                flightSpeed = FAST_SPEED;
+                break;
+            case 0:
+            default:
+                flightSpeed = SLOW_SPEED;
+                break;
+        }
+
         if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ANGEL_WINGS)) {
-            // Adjust flight speed for angel wings
-            float flightSpeed = 0.15f;
             abilities.setFlySpeed(flightSpeed);
         } else if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.DEVIL_WINGS)) {
-            // Adjust flight speed for devil wings
-            float flightSpeed = 0.3f;
-            abilities.setFlySpeed(flightSpeed);
+            abilities.setFlySpeed(flightSpeed * 2); // Double speed for devil wings
         }
 
         // Ensure the player is not flying if on the ground or in a vehicle

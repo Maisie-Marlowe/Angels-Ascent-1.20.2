@@ -14,8 +14,15 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
+
     public static final Block SOUL_ORE = registerBlock("soul_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(4f), UniformIntProvider.create(2, 5)));
+
+    public static final Block HOLY_ORE = registerBlock("holy_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(5f), UniformIntProvider.create(3, 7)));
+
+    public static final Block BLASPHEMOUS_ORE = registerBlock("blasphemous_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(6f), UniformIntProvider.create(5, 10)));
 
 
 

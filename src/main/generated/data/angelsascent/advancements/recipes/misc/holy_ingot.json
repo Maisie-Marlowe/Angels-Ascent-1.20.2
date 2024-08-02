@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_holy_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:holy_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:holy_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_holy_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:holy_ingot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

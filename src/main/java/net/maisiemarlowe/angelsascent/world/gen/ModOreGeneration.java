@@ -10,5 +10,12 @@ public class ModOreGeneration {
 
         BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(),
                 GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.SOUL_ORE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(),
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.HOLY_ORE_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(),
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.BLASPHEMOUS_ORE_PLACED_KEY);
+
     }
 }
