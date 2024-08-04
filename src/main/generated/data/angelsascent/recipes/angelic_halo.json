@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "angelsascent:holy_ingot"
+    }
+  },
+  "pattern": [
+    "HHH",
+    "   ",
+    "   "
+  ],
+  "result": {
+    "item": "angelsascent:angelic_halo"
+  },
+  "show_notification": true
+}

@@ -7,7 +7,8 @@
 		"ClientPlayerEntityMixin"
 	],
 	"server": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"ServerPlayerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

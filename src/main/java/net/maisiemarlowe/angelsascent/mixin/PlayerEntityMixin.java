@@ -66,6 +66,7 @@ public abstract class PlayerEntityMixin {
             }
             player.sendMessage(Text.literal("Flight Speed Toggled: ").formatted(Formatting.AQUA)
                     .append(Text.literal(speedStatus).formatted(speedColor)), true);
+
         }
         keyPreviouslyPressed = keyPressed;
 
@@ -136,5 +137,8 @@ public abstract class PlayerEntityMixin {
             abilities.allowFlying = false;
             abilities.flying = false;
         }
+
     }
+
+
 }
