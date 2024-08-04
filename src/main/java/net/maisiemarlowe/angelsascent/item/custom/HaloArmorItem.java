@@ -1,9 +1,13 @@
 package net.maisiemarlowe.angelsascent.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import net.maisiemarlowe.angelsascent.client.HaloArmorRenderer;
 import net.maisiemarlowe.angelsascent.item.ModArmorMaterials;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,11 +18,23 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoItem;
+import software.bernie.geckolib.animatable.client.RenderProvider;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
-public class HaloArmorItem extends ArmorItem {
+public class HaloArmorItem extends ArmorItem implements GeoItem {
+
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
+
 
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
@@ -79,4 +95,43 @@ public class HaloArmorItem extends ArmorItem {
         nbt.putBoolean("Unbreakable", true);
     }
 
+    @Override
+    public void createRenderer(Consumer<Object> consumer) {
+        consumer.accept(new RenderProvider() {
+            private HaloArmorRenderer renderer;
+
+            @Override
+            public BipedEntityModel<LivingEntity> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+                                                                        EquipmentSlot equipmentSlot, BipedEntityModel<LivingEntity> original) {
+                if (this.renderer == null)
+                    this.renderer = new HaloArmorRenderer();
+
+                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
+
+                return this.renderer;
+
+            }
+        });
+    }
+
+    @Override
+    public Supplier<Object> getRenderProvider() {
+        return this.renderProvider;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController(this, "controller", 0, this::predicate));
+    }
+
+    private PlayState predicate(AnimationState animationState) {
+        animationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+    }
+
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
+    }
 }

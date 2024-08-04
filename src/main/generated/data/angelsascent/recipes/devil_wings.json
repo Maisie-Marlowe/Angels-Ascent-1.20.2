@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": {
+    "A": {
       "item": "angelsascent:angel_wings"
     },
     "I": {
@@ -17,7 +17,7 @@
   },
   "pattern": [
     "PIP",
-    "MEM",
+    "MAM",
     "I I"
   ],
   "result": {

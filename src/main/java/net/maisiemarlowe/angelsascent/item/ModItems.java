@@ -65,8 +65,8 @@ public class ModItems {
     public static final Item BLASPHEMOUS_SHOVEL = registerItem("blasphemous_shovel", new ModShovelItems(ModToolMaterials.BLASPHEMOUS_INGOT,
             3.5f, -2.3f, true, new FabricItemSettings().fireproof()));
 
-    public static final Item ANGEL_WINGS = registerItem("angel_wings", new AngelWingsItem(new FabricItemSettings()));
-    public static final Item DEVIL_WINGS = registerItem("devil_wings", new AngelWingsItem(new FabricItemSettings()));
+    public static final Item ANGEL_WINGS = registerItem("angel_wings", new AngelWingsItem(ModArmorMaterials.WINGS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item DEVIL_WINGS = registerItem("devil_wings", new AngelWingsItem(ModArmorMaterials.WINGS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
 
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {

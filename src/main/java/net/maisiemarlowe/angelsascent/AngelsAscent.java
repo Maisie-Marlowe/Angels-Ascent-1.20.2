@@ -14,6 +14,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib.GeckoLib;
 
 public class AngelsAscent implements ModInitializer {
 	public static final String MOD_ID = "angelsascent";
@@ -35,7 +36,12 @@ public class AngelsAscent implements ModInitializer {
 
 		Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(AngelsAscent.MOD_ID, "end_portal_frame_block_entity"), END_PORTAL_FRAME_BLOCK_ENTITY_TYPE);
 
-		ModKeyBindings.register();
+
+
+		GeckoLib.initialize();
+
+
+
 
 
 	}

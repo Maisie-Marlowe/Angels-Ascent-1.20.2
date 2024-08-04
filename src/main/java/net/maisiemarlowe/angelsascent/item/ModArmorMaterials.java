@@ -3,6 +3,7 @@ package net.maisiemarlowe.angelsascent.item;
 import net.maisiemarlowe.angelsascent.AngelsAscent;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -10,8 +11,14 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    HALO("halo", 1, new int[] { 1 }, 19,
-            SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 1f, 0.5f, () -> Ingredient.ofItems(ModItems.ULTRA_COMPRESSED_ENDER_PEARL));
+    HALO("halo", 1, new int[] { 1, 1, 1, 1 }, 19,
+            SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 1f, 0.5f, () -> Ingredient.ofItems(ModItems.ULTRA_COMPRESSED_ENDER_PEARL)),
+    WINGS("wings", 1, new int[] { 1, 1, 1, 1 }, 15,
+    SoundEvents.ITEM_ARMOR_EQUIP_ELYTRA, 1f, 0.5f, () -> Ingredient.ofItems(ModItems.HOLY_INGOT))
+
+
+
+    ;
 
     private final String name;
     private final int durabilityMultiplier;
@@ -22,7 +29,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = { 1 };
+    private static final int[] BASE_DURABILITY = { 1, 1, 1, 1 };
 
     ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
                       float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
