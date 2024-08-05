@@ -95,7 +95,7 @@
   ],
 
   "item.angelsascent.blasphemous_sword": [
-    {"text":"Blasphemous Axe", "color": "#DC143C"}
+    {"text":"Blasphemous Sword", "color": "#DC143C"}
   ],
 
   "item.angelsascent.holy_hoe": [
@@ -103,7 +103,7 @@
   ],
 
   "item.angelsascent.blasphemous_hoe": [
-    {"text":"Blasphemous Axe", "color": "#DC143C"}
+    {"text":"Blasphemous Hoe", "color": "#DC143C"}
   ],
 
   "item.angelsascent.holy_shovel": [
@@ -111,7 +111,7 @@
   ],
 
   "item.angelsascent.blasphemous_shovel": [
-    {"text":"Blasphemous Axe", "color": "#DC143C"}
+    {"text":"Blasphemous Shovel", "color": "#DC143C"}
   ],
 
   "item.angelsascent.angel_wings": [
