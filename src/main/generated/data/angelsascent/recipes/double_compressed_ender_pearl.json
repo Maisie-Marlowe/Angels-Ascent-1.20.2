@@ -7,9 +7,9 @@
     }
   },
   "pattern": [
-    "CCC",
-    "CCC",
-    "CCC"
+    "   ",
+    "C  ",
+    "CC "
   ],
   "result": {
     "item": "angelsascent:double_compressed_ender_pearl"

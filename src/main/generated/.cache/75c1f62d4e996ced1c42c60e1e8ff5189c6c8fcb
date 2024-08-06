@@ -1,4 +1,4 @@
-// 1.20.2	2024-08-04T11:57:00.0859135	Angel's Ascent/Model Definitions
+// 1.20.2	2024-08-05T15:28:35.2938471	Angel's Ascent/Model Definitions
 a9c02c5b21a0e47542eebbf13844c7dcd8b121a6 assets\angelsascent\models\item\angelic_halo_emerald_trim.json
 55dff229a1e04c9ac9d765be5a4b67fe220a4047 assets\angelsascent\models\item\angelic_halo_quartz_trim.json
 4ef3ebefb23f6e5095f5f5d5a96b054bed4f720d assets\angelsascent\models\item\blasphemous_shovel.json
@@ -35,8 +35,8 @@ ca52c0a720a9c282268a18f72902701aabf1f03d assets\angelsascent\models\item\purifie
 16310415ec18ab009aa7eca7524fc5fa4023fd93 assets\angelsascent\models\item\holy_sword.json
 134ec42a9707e492804f5f06cf0e1370236ad921 assets\angelsascent\models\item\angelic_halo_redstone_trim.json
 10cc8e87517eb35aae3ccfd5560fbc13d649a733 assets\angelsascent\models\item\holy_axe.json
-925ebb6c9f008a0474480c095fc88f01acf518f9 assets\angelsascent\models\item\holy_hoe.json
 212ed819608f6ff3ca15039a2b3dccaf20284fbf assets\angelsascent\models\item\blasphemous_ore.json
+925ebb6c9f008a0474480c095fc88f01acf518f9 assets\angelsascent\models\item\holy_hoe.json
 cda21946a7b3db43b03cb768e4e8d69c5ac0ff19 assets\angelsascent\models\block\holy_ore.json
 b0665041f9f2c1a136c5e8acdf12cd263243f3e9 assets\angelsascent\models\item\angelic_halo_lapis_trim.json
 1ddc2a258bf390e4fae1a5b23f0cc53d06b93d4b assets\angelsascent\models\item\blasphemous_hoe.json

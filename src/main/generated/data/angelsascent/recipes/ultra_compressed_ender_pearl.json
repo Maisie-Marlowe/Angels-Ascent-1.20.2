@@ -7,9 +7,9 @@
     }
   },
   "pattern": [
-    "UUU",
-    "UUU",
-    "UUU"
+    "   ",
+    "U  ",
+    "UU "
   ],
   "result": {
     "item": "angelsascent:ultra_compressed_ender_pearl"

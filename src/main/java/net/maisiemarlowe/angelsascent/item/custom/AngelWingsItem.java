@@ -40,7 +40,13 @@ public class AngelWingsItem extends ArmorItem implements GeoItem {
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+
+        ItemStack stack = user.getStackInHand(hand);
+        NbtCompound nbt = stack.getOrCreateNbt();
+        nbt.putBoolean("Unbreakable", true);
+        stack.setNbt(nbt);
         return this.equipAndSwap(this, world, user, hand);
+        //return super.use(world, user, hand);
     }
 
     public SoundEvent getEquipSound() {
@@ -51,14 +57,15 @@ public class AngelWingsItem extends ArmorItem implements GeoItem {
         return EquipmentSlot.CHEST;
     }
 
+//
+//    @Override
+//    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+//        super.appendTooltip(stack, world, tooltip, context);
+//
+//        NbtCompound nbt = stack.getOrCreateNbt();
+//        nbt.putBoolean("Unbreakable", true);
+//    }
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
-
-        NbtCompound nbt = stack.getOrCreateNbt();
-        nbt.putBoolean("Unbreakable", true);
-    }
 
     @Override
     public void createRenderer(Consumer<Object> consumer) {

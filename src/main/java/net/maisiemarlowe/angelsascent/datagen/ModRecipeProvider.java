@@ -49,33 +49,33 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PURIFIED_EYE_OF_ENDER)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.COMPRESSED_ENDER_PEARL, 1)
-                .pattern("EEE")
-                .pattern("EEE")
-                .pattern("EEE")
+                .pattern("   ")
+                .pattern("EE ")
+                .pattern("EE ")
                 .input('E', Items.ENDER_PEARL)
                 .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.COMPRESSED_ENDER_PEARL)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DOUBLE_COMPRESSED_ENDER_PEARL, 1)
-                .pattern("CCC")
-                .pattern("CCC")
-                .pattern("CCC")
+                .pattern("   ")
+                .pattern("CC ")
+                .pattern("CC ")
                 .input('C', ModItems.COMPRESSED_ENDER_PEARL)
                 .criterion(hasItem(ModItems.COMPRESSED_ENDER_PEARL), conditionsFromItem(ModItems.COMPRESSED_ENDER_PEARL))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.DOUBLE_COMPRESSED_ENDER_PEARL)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TRIPLE_COMPRESSED_ENDER_PEARL, 1)
-                .pattern("DDD")
-                .pattern("DDD")
-                .pattern("DDD")
+                .pattern("   ")
+                .pattern("DD ")
+                .pattern("DD ")
                 .input('D', ModItems.DOUBLE_COMPRESSED_ENDER_PEARL)
                 .criterion(hasItem(ModItems.DOUBLE_COMPRESSED_ENDER_PEARL), conditionsFromItem(ModItems.DOUBLE_COMPRESSED_ENDER_PEARL))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TRIPLE_COMPRESSED_ENDER_PEARL)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ULTRA_COMPRESSED_ENDER_PEARL, 1)
-                .pattern("UUU")
-                .pattern("UUU")
-                .pattern("UUU")
+                .pattern("   ")
+                .pattern("UU ")
+                .pattern("UU ")
                 .input('U', ModItems.TRIPLE_COMPRESSED_ENDER_PEARL)
                 .criterion(hasItem(ModItems.TRIPLE_COMPRESSED_ENDER_PEARL), conditionsFromItem(ModItems.TRIPLE_COMPRESSED_ENDER_PEARL))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ULTRA_COMPRESSED_ENDER_PEARL)));

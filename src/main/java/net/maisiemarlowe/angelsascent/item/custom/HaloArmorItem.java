@@ -16,6 +16,8 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -85,15 +87,26 @@ public class HaloArmorItem extends ArmorItem implements GeoItem {
         ArmorItem helmet = ((ArmorItem)player.getInventory().getArmorStack(3).getItem());
 
         return helmet.getMaterial() == material;
-        }
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
+    }
 
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+
+        ItemStack stack = user.getStackInHand(hand);
         NbtCompound nbt = stack.getOrCreateNbt();
         nbt.putBoolean("Unbreakable", true);
+        stack.setNbt(nbt);
+        return this.equipAndSwap(this, world, user, hand);
+        //return super.use(world, user, hand);
     }
+//
+//    @Override
+//    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+//        super.appendTooltip(stack, world, tooltip, context);
+//
+//        NbtCompound nbt = stack.getOrCreateNbt();
+//        nbt.putBoolean("Unbreakable", true);
+//    }
 
     @Override
     public void createRenderer(Consumer<Object> consumer) {

@@ -7,9 +7,9 @@
     }
   },
   "pattern": [
-    "DDD",
-    "DDD",
-    "DDD"
+    "   ",
+    "D  ",
+    "DD "
   ],
   "result": {
     "item": "angelsascent:triple_compressed_ender_pearl"
