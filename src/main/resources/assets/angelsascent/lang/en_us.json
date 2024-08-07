@@ -1,5 +1,5 @@
 {
-  "item.angelsascent.purified_eye_of_ender": [
+  "item.angelsascent.purified_ender_eye": [
     {"text": "Purified Eye of Ender", "color": "#40E0D0"}
   ],
 
@@ -8,6 +8,8 @@
   "item.angelsascent.purified_ender_shard": [
     {"text": "Purified Ender Shard", "color": "#40E0D0"}
   ],
+
+  "block.angelsascent.compressor_block": "Compressor",
 
   "block.angelsascent.soul_ore": [
     {"text": "Soul Ore", "color": "#00bfff"}
@@ -114,13 +116,22 @@
     {"text":"Blasphemous Shovel", "color": "#DC143C"}
   ],
 
-  "item.angelsascent.angel_wings": [
-    {"text":"Angel Wings", "color": "#FFFF66"}
+  "item.angelsascent.holy_wings": [
+    {"text":"Holy Wings", "color": "#FFFF66"}
   ],
 
-  "item.angelsascent.devil_wings": [
-    {"text":"Devil Wings", "color": "#8B0000"}
+  "item.angelsascent.blasphemous_wings": [
+    {"text":"Blasphemous Wings", "color": "#8B0000"}
   ],
+
+  "item.angelsascent.holy_carrot": [
+    {"text":"Holy Carrot", "color": "#ffdf00"}
+  ],
+
+  "item.angelsascent.blasphemous_carrot": [
+    {"text":"Blasphemous Carrot", "color": "#DC143C"}
+  ],
+
 
 
 

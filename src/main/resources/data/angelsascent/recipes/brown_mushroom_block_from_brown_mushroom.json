@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_mushroom"
+    }
+  ],
+  "output": {
+    "item": "minecraft:brown_mushroom_block"
+  }
+}

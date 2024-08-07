@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:chain_command_block"
+    }
+  ],
+  "output": {
+    "item": "minecraft:repeating_command_block"
+  }
+}

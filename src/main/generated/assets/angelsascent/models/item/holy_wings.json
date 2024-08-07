@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "angelsascent:item/purified_eye_of_ender"
+    "layer0": "angelsascent:item/holy_wings"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:stone_bricks"
+    },
+    "E": {
+      "item": "angelsascent:purified_ender_eye"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "P": {
+      "item": "minecraft:sticky_piston"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "FPF",
+    "BEB"
+  ],
+  "result": {
+    "item": "angelsascent:compressor_block"
+  },
+  "show_notification": true
+}

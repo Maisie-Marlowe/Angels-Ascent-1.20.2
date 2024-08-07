@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "angelsascent:triple_compressed_ender_pearl"
+    }
+  ],
+  "output": {
+    "item": "angelsascent:ultra_compressed_ender_pearl"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:enchanted_book"
+    }
+  ],
+  "output": {
+    "item": "minecraft:command_block"
+  }
+}

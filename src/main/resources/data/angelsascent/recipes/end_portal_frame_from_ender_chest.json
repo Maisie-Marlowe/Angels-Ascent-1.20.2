@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_chest"
+    }
+  ],
+  "output": {
+    "item": "minecraft:end_portal_frame"
+  }
+}

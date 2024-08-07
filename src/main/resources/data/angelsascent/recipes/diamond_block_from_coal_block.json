@@ -1,0 +1,12 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:coal_block"
+    }
+  ],
+  "output": {
+    "item": "minecraft:diamond_block",
+    "count": 3
+  }
+}

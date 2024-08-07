@@ -22,9 +22,9 @@ public class WingsArmorModel extends GeoModel {
 
     @Override
     public Identifier getTextureResource(GeoAnimatable animatable) {
-        if(currentItemStack.isOf(ModItems.ANGEL_WINGS)) {
+        if(currentItemStack.isOf(ModItems.HOLY_WINGS)) {
             return new Identifier(AngelsAscent.MOD_ID, "textures/armor/angel_wings_texture.png");
-        } else if (currentItemStack.isOf(ModItems.DEVIL_WINGS)) {
+        } else if (currentItemStack.isOf(ModItems.BLASPHEMOUS_WINGS)) {
             return  new Identifier(AngelsAscent.MOD_ID, "textures/armor/devil_wings_texture.png");
         }
 

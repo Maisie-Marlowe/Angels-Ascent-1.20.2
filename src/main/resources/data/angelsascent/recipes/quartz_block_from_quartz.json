@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "output": {
+    "item": "minecraft:quartz_block"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_brick_wall"
+    }
+  ],
+  "output": {
+    "item": "minecraft:netherite_scrap",
+    "count": 1
+  }
+}

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_holy_ingot": {
+    "has_blasphemous_ingot": {
       "conditions": {
         "items": [
           {
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:angel_wings"
+        "recipe": "minecraft:blasphemous_wings"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_holy_ingot"
+      "has_blasphemous_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:angel_wings"
+      "minecraft:blasphemous_wings"
     ]
   },
   "sends_telemetry_event": false

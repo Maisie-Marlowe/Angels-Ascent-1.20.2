@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blasphemous_ingot": {
+    "has_purified_ender_eye": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:stick"
+              "minecraft:sticky_piston"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:devil_wings"
+        "recipe": "angelsascent:compressor_block_recipe_2"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blasphemous_ingot"
+      "has_purified_ender_eye"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:devil_wings"
+      "angelsascent:compressor_block_recipe_2"
     ]
   },
   "sends_telemetry_event": false

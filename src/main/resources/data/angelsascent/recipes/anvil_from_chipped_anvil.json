@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:chipped_anvil"
+    }
+  ],
+  "output": {
+    "item": "minecraft:anvil"
+  }
+}

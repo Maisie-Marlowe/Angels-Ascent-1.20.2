@@ -2,26 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": {
-      "item": "minecraft:elytra"
+    "A": {
+      "item": "angelsascent:holy_wings"
     },
     "I": {
-      "item": "angelsascent:holy_ingot"
+      "item": "angelsascent:blasphemous_ingot"
     },
     "M": {
       "item": "minecraft:phantom_membrane"
     },
     "P": {
-      "item": "angelsascent:purified_eye_of_ender"
+      "item": "angelsascent:purified_ender_eye"
     }
   },
   "pattern": [
     "PIP",
-    "MEM",
+    "MAM",
     "I I"
   ],
   "result": {
-    "item": "angelsascent:angel_wings"
+    "item": "angelsascent:blasphemous_wings"
   },
   "show_notification": true
 }

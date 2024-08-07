@@ -1,0 +1,12 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:charcoal"
+    }
+  ],
+  "output": {
+    "item": "minecraft:emerald",
+    "count": 3
+  }
+}

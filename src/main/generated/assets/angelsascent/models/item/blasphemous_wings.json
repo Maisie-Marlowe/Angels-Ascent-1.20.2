@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "angelsascent:item/angel_wings"
+    "layer0": "angelsascent:item/blasphemous_wings"
   }
 }

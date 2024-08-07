@@ -27,6 +27,8 @@ public class ModItemGroups {
 
                 entries.add(ModItems.PURIFIED_EYE_OF_ENDER);
 
+                entries.add(ModBlocks.COMPRESSOR_BLOCK);
+
                 entries.add(ModItems.COMPRESSED_ENDER_PEARL);
                 entries.add(ModItems.DOUBLE_COMPRESSED_ENDER_PEARL);
                 entries.add(ModItems.TRIPLE_COMPRESSED_ENDER_PEARL);
@@ -39,12 +41,14 @@ public class ModItemGroups {
 
                 entries.add(ModItems.SOUL_DRILL);
 
+                entries.add(ModItems.HOLY_CARROT);
                 entries.add(ModItems.HOLY_SHOVEL);
                 entries.add(ModItems.HOLY_PICKAXE);
                 entries.add(ModItems.HOLY_AXE);
                 entries.add(ModItems.HOLY_HOE);
                 entries.add(ModItems.HOLY_SWORD);
 
+                entries.add(ModItems.BLASPHEMOUS_CARROT);
                 entries.add(ModItems.BLASPHEMOUS_SHOVEL);
                 entries.add(ModItems.BLASPHEMOUS_PICKAXE);
                 entries.add(ModItems.BLASPHEMOUS_AXE);
@@ -55,8 +59,8 @@ public class ModItemGroups {
 
                 entries.add(ModItems.HALO);
 
-                entries.add(ModItems.ANGEL_WINGS);
-                entries.add(ModItems.DEVIL_WINGS);
+                entries.add(ModItems.HOLY_WINGS);
+                entries.add(ModItems.BLASPHEMOUS_WINGS);
 
 
 

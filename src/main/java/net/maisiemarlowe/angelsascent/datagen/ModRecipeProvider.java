@@ -2,6 +2,7 @@ package net.maisiemarlowe.angelsascent.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.maisiemarlowe.angelsascent.AngelsAscent;
 import net.maisiemarlowe.angelsascent.block.ModBlocks;
 import net.maisiemarlowe.angelsascent.item.ModItems;
 import net.minecraft.data.server.recipe.RecipeExporter;
@@ -183,7 +184,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.ANGEL_WINGS, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.HOLY_WINGS, 1)
                 .pattern("PIP")
                 .pattern("MEM")
                 .pattern("I I")
@@ -192,18 +193,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('E', Items.ELYTRA)
                 .input('M', Items.PHANTOM_MEMBRANE)
                 .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.ANGEL_WINGS)));
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_WINGS)));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.DEVIL_WINGS, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.BLASPHEMOUS_WINGS, 1)
                 .pattern("PIP")
                 .pattern("MAM")
                 .pattern("I I")
                 .input('I', ModItems.BLASPHEMOUS_INGOT)
                 .input('P', ModItems.PURIFIED_EYE_OF_ENDER)
-                .input('A', ModItems.ANGEL_WINGS)
+                .input('A', ModItems.HOLY_WINGS)
                 .input('M', Items.PHANTOM_MEMBRANE)
                 .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DEVIL_WINGS)));
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_WINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BLASPHEMOUS_INGOT, 1)
                 .pattern("NNN")
@@ -250,6 +251,47 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('H', ModItems.HOLY_INGOT)
                 .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HALO)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.COMPRESSOR_BLOCK, 1)
+                .pattern("BBB")
+                .pattern("FPF")
+                .pattern("BEB")
+                .input('B', Items.STONE_BRICKS)
+                .input('P', Items.PISTON)
+                .input('E', ModItems.PURIFIED_EYE_OF_ENDER)
+                .input('F', Items.FURNACE)
+                .criterion(hasItem(ModItems.PURIFIED_EYE_OF_ENDER), conditionsFromItem(Items.PISTON))
+                .offerTo(exporter, new Identifier(AngelsAscent.MOD_ID, "compressor_block_recipe"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.COMPRESSOR_BLOCK, 1)
+                .pattern("BBB")
+                .pattern("FPF")
+                .pattern("BEB")
+                .input('B', Items.STONE_BRICKS)
+                .input('P', Items.STICKY_PISTON)
+                .input('E', ModItems.PURIFIED_EYE_OF_ENDER)
+                .input('F', Items.FURNACE)
+                .criterion(hasItem(ModItems.PURIFIED_EYE_OF_ENDER), conditionsFromItem(Items.STICKY_PISTON))
+                .offerTo(exporter, new Identifier(AngelsAscent.MOD_ID, "compressor_block_recipe_2"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.HOLY_CARROT, 1)
+                .pattern("III")
+                .pattern("ICI")
+                .pattern("III")
+                .input('C', Items.CARROT)
+                .input('I', ModItems.HOLY_INGOT)
+                .criterion(hasItem(ModItems.HOLY_INGOT), conditionsFromItem(Items.CARROT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOLY_CARROT)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BLASPHEMOUS_CARROT, 1)
+                .pattern("III")
+                .pattern("ICI")
+                .pattern("III")
+                .input('C', Items.CARROT)
+                .input('I', ModItems.BLASPHEMOUS_INGOT)
+                .criterion(hasItem(ModItems.BLASPHEMOUS_INGOT), conditionsFromItem(Items.CARROT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BLASPHEMOUS_CARROT)));
+
 
 
 

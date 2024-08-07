@@ -19,8 +19,6 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SOUL_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.HOLY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLASPHEMOUS_ORE);
-        //BlockStateModelGenerator.BlockTexturePool soul_ore_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SOUL_ORE);
-
 
     }
 
@@ -58,8 +56,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BLASPHEMOUS_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BLASPHEMOUS_SHOVEL, Models.HANDHELD);
 
-        itemModelGenerator.register(ModItems.ANGEL_WINGS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DEVIL_WINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HOLY_WINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLASPHEMOUS_WINGS, Models.GENERATED);
 
 
     }

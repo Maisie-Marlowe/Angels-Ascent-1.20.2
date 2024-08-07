@@ -3,6 +3,7 @@ package net.maisiemarlowe.angelsascent.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.maisiemarlowe.angelsascent.AngelsAscent;
+import net.maisiemarlowe.angelsascent.block.ModBlocks;
 import net.maisiemarlowe.angelsascent.item.custom.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -12,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
 
-    public static final Item PURIFIED_EYE_OF_ENDER = registerItem("purified_eye_of_ender", new Item(new FabricItemSettings()));
+    public static final Item PURIFIED_EYE_OF_ENDER = registerItem("purified_ender_eye", new Item(new FabricItemSettings()));
     public static final Item ENDER_SHARD = registerItem("ender_shard", new Item(new FabricItemSettings().maxCount(16)));
     public static final Item PURIFIED_ENDER_SHARD = registerItem("purified_ender_shard", new Item(new FabricItemSettings().maxCount(16)));
     public static final Item SOUL_POWDER = registerItem("soul_powder", new Item(new FabricItemSettings()));
@@ -65,9 +66,14 @@ public class ModItems {
     public static final Item BLASPHEMOUS_SHOVEL = registerItem("blasphemous_shovel", new ModShovelItems(ModToolMaterials.BLASPHEMOUS_INGOT,
             3.5f, -2.3f, true, new FabricItemSettings().fireproof()));
 
-    public static final Item ANGEL_WINGS = registerItem("angel_wings", new AngelWingsItem(ModArmorMaterials.WINGS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
-    public static final Item DEVIL_WINGS = registerItem("devil_wings", new AngelWingsItem(ModArmorMaterials.WINGS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item HOLY_WINGS = registerItem("holy_wings", new WingsItem(ModArmorMaterials.WINGS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item BLASPHEMOUS_WINGS = registerItem("blasphemous_wings", new WingsItem(ModArmorMaterials.WINGS, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
 
+    public static final Item COMPRESSOR_BLOCK_ITEM = registerItem("compressor_block",
+            new CompressorBlockItem(ModBlocks.COMPRESSOR_BLOCK, new FabricItemSettings()));
+
+    public static final Item HOLY_CARROT = registerItem("holy_carrot", new Item(new FabricItemSettings().food(ModFoodComponents.HOLY_CARROT)));
+    public static final Item BLASPHEMOUS_CARROT = registerItem("blasphemous_carrot", new Item(new FabricItemSettings().food(ModFoodComponents.BLASPHEMOUS_CARROT)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(PURIFIED_EYE_OF_ENDER);

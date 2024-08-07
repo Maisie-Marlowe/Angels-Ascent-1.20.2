@@ -1,0 +1,12 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:netherrack"
+    }
+  ],
+  "output": {
+    "item": "minecraft:nether_brick",
+    "count": 9
+  }
+}

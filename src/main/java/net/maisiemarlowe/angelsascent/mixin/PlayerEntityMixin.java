@@ -41,7 +41,7 @@ public abstract class PlayerEntityMixin {
         PlayerEntity player = (PlayerEntity) (Object) this;
         PlayerAbilities abilities = player.getAbilities();
         ItemStack chestStack = player.getEquippedStack(EquipmentSlot.CHEST);
-        boolean hasWingsEquipped = chestStack.isOf(ModItems.ANGEL_WINGS) || chestStack.isOf(ModItems.DEVIL_WINGS);
+        boolean hasWingsEquipped = chestStack.isOf(ModItems.HOLY_WINGS) || chestStack.isOf(ModItems.BLASPHEMOUS_WINGS);
 
         // Handle key press debounce
         boolean keyPressed = ModKeyBindings.TOGGLE_WING_SPEED.isPressed();
@@ -74,6 +74,10 @@ public abstract class PlayerEntityMixin {
             abilities.allowFlying = true;
             return;
         }
+        if (player.isSpectator()) {
+            abilities.flying = true;
+            return;
+        }
         if (player instanceof IClientPlayerEntityMixin mixin) {
             startFlying = mixin.isDoubleJumpActive();
         }
@@ -94,7 +98,7 @@ public abstract class PlayerEntityMixin {
         }
 
         // If no wings are equipped, disable flying
-        if (!player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ANGEL_WINGS) && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.DEVIL_WINGS)) {
+        if (!player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.HOLY_WINGS) && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.BLASPHEMOUS_WINGS)) {
             abilities.allowFlying = false;
             abilities.flying = false;
         }
@@ -126,9 +130,9 @@ public abstract class PlayerEntityMixin {
                 break;
         }
 
-        if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ANGEL_WINGS)) {
+        if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.HOLY_WINGS)) {
             abilities.setFlySpeed(flightSpeed);
-        } else if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.DEVIL_WINGS)) {
+        } else if (player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.BLASPHEMOUS_WINGS)) {
             abilities.setFlySpeed(flightSpeed * 2); // Double speed for devil wings
         }
 

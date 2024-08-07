@@ -1,0 +1,11 @@
+{
+  "type": "angelsascent:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:damaged_anvil"
+    }
+  ],
+  "output": {
+    "item": "minecraft:anvil"
+  }
+}

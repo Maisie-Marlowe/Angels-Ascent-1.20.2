@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:carrot"
+    },
+    "I": {
+      "item": "angelsascent:blasphemous_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "ICI",
+    "III"
+  ],
+  "result": {
+    "item": "angelsascent:blasphemous_carrot"
+  },
+  "show_notification": true
+}

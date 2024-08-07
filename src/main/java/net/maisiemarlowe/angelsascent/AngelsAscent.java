@@ -3,9 +3,12 @@ package net.maisiemarlowe.angelsascent;
 import net.fabricmc.api.ModInitializer;
 import net.maisiemarlowe.angelsascent.block.entity.EndPortalFrameBlockEntity;
 import net.maisiemarlowe.angelsascent.block.ModBlocks;
+import net.maisiemarlowe.angelsascent.block.entity.ModBlockEntities;
 import net.maisiemarlowe.angelsascent.event.BlockEventHandler;
 import net.maisiemarlowe.angelsascent.item.ModItemGroups;
 import net.maisiemarlowe.angelsascent.item.ModItems;
+import net.maisiemarlowe.angelsascent.recipe.ModRecipes;
+import net.maisiemarlowe.angelsascent.screen.ModScreenHandlers;
 import net.maisiemarlowe.angelsascent.world.gen.ModWorldGeneration;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
@@ -36,6 +39,10 @@ public class AngelsAscent implements ModInitializer {
 
 		Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(AngelsAscent.MOD_ID, "end_portal_frame_block_entity"), END_PORTAL_FRAME_BLOCK_ENTITY_TYPE);
 
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
+
+		ModRecipes.registerRecipes();
 
 
 		GeckoLib.initialize();

@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:purified_eye_of_ender"
+        "recipe": "minecraft:purified_ender_eye"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -54,7 +54,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:purified_eye_of_ender"
+      "minecraft:purified_ender_eye"
     ]
   },
   "sends_telemetry_event": false
