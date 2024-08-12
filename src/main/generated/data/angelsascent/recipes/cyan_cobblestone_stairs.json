@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:cyan_dye"
+    },
+    "S": {
+      "item": "minecraft:cobblestone_stairs"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:cyan_cobblestone_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:light_gray_dye"
+    },
+    "S": {
+      "item": "minecraft:cobblestone_wall"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:light_gray_cobblestone_wall"
+  },
+  "show_notification": true
+}

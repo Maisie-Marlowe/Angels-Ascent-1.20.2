@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "angelsascent:block/light_gray_cobblestone",
+    "side": "angelsascent:block/light_gray_cobblestone",
+    "top": "angelsascent:block/light_gray_cobblestone"
+  }
+}

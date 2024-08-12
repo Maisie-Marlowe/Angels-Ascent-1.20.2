@@ -6,6 +6,8 @@ import net.maisiemarlowe.angelsascent.AngelsAscent;
 import net.maisiemarlowe.angelsascent.block.ModBlocks;
 import net.maisiemarlowe.angelsascent.item.custom.*;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.EnderEyeItem;
+import net.minecraft.item.EnderPearlItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -13,15 +15,17 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
 
-    public static final Item PURIFIED_EYE_OF_ENDER = registerItem("purified_ender_eye", new Item(new FabricItemSettings()));
+    public static final Item PURIFIED_EYE_OF_ENDER = registerItem("purified_ender_eye", new EnderEyeItem(new FabricItemSettings()));
     public static final Item ENDER_SHARD = registerItem("ender_shard", new Item(new FabricItemSettings().maxCount(16)));
     public static final Item PURIFIED_ENDER_SHARD = registerItem("purified_ender_shard", new Item(new FabricItemSettings().maxCount(16)));
     public static final Item SOUL_POWDER = registerItem("soul_powder", new Item(new FabricItemSettings()));
-    public static final Item COMPRESSED_ENDER_PEARL = registerItem("compressed_ender_pearl", new Item(new FabricItemSettings()));
-    public static final Item DOUBLE_COMPRESSED_ENDER_PEARL = registerItem("double_compressed_ender_pearl", new Item(new FabricItemSettings()));
-    public static final Item TRIPLE_COMPRESSED_ENDER_PEARL = registerItem("triple_compressed_ender_pearl", new Item(new FabricItemSettings()));
-    public static final Item ULTRA_COMPRESSED_ENDER_PEARL = registerItem("ultra_compressed_ender_pearl", new Item(new FabricItemSettings()));
+
+    public static final Item COMPRESSED_ENDER_PEARL = registerItem("compressed_ender_pearl", new EnderPearlItem(new FabricItemSettings()));
+    public static final Item DOUBLE_COMPRESSED_ENDER_PEARL = registerItem("double_compressed_ender_pearl", new EnderPearlItem(new FabricItemSettings()));
+    public static final Item TRIPLE_COMPRESSED_ENDER_PEARL = registerItem("triple_compressed_ender_pearl", new EnderPearlItem(new FabricItemSettings()));
+    public static final Item ULTRA_COMPRESSED_ENDER_PEARL = registerItem("ultra_compressed_ender_pearl", new EnderPearlItem(new FabricItemSettings()));
     public static final Item HOLY_NUGGET = registerItem("holy_nugget", new Item(new FabricItemSettings()));
+
     public static final Item BLASPHEMOUS_NUGGET = registerItem("blasphemous_nugget", new Item(new FabricItemSettings()));
     public static final Item HOLY_INGOT = registerItem("holy_ingot", new Item(new FabricItemSettings()));
     public static final Item BLASPHEMOUS_INGOT = registerItem("blasphemous_ingot", new Item(new FabricItemSettings()));
@@ -72,8 +76,8 @@ public class ModItems {
     public static final Item COMPRESSOR_BLOCK_ITEM = registerItem("compressor_block",
             new CompressorBlockItem(ModBlocks.COMPRESSOR_BLOCK, new FabricItemSettings()));
 
-    public static final Item HOLY_CARROT = registerItem("holy_carrot", new Item(new FabricItemSettings().food(ModFoodComponents.HOLY_CARROT)));
-    public static final Item BLASPHEMOUS_CARROT = registerItem("blasphemous_carrot", new Item(new FabricItemSettings().food(ModFoodComponents.BLASPHEMOUS_CARROT)));
+    public static final Item HOLY_CARROT = registerItem("holy_carrot", new Item(new FabricItemSettings().food(ModFoodComponents.HOLY_CARROT).fireproof()));
+    public static final Item BLASPHEMOUS_CARROT = registerItem("blasphemous_carrot", new Item(new FabricItemSettings().food(ModFoodComponents.BLASPHEMOUS_CARROT).fireproof()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(PURIFIED_EYE_OF_ENDER);

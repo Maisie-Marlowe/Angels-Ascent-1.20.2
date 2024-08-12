@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "angelsascent:block/pink_cobblestone",
+    "side": "angelsascent:block/pink_cobblestone",
+    "top": "angelsascent:block/pink_cobblestone"
+  }
+}

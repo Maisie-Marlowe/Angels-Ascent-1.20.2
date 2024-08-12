@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "angelsascent:block/magenta_stone_slab"
+    },
+    "type=double": {
+      "model": "angelsascent:block/magenta_stone"
+    },
+    "type=top": {
+      "model": "angelsascent:block/magenta_stone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "angelsascent:holy_carrot"
+    },
+    "title": "You know that's metal, right?",
+    "description": "Crafted a Holy Carrot",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_holy_nugget",
+  "criteria": {
+    "crafted_holy_carrot": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "angelsascent:holy_carrot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crafted_holy_carrot"
+    ]
+  ]
+}

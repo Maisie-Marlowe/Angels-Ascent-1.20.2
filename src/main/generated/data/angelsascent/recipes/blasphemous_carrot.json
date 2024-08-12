@@ -5,14 +5,14 @@
     "C": {
       "item": "minecraft:carrot"
     },
-    "I": {
-      "item": "angelsascent:blasphemous_ingot"
+    "N": {
+      "item": "angelsascent:blasphemous_nugget"
     }
   },
   "pattern": [
-    "III",
-    "ICI",
-    "III"
+    "NNN",
+    "NCN",
+    "NNN"
   ],
   "result": {
     "item": "angelsascent:blasphemous_carrot"

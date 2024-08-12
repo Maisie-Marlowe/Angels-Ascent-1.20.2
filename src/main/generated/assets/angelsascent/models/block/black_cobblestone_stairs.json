@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "angelsascent:block/black_cobblestone",
+    "side": "angelsascent:block/black_cobblestone",
+    "top": "angelsascent:block/black_cobblestone"
+  }
+}

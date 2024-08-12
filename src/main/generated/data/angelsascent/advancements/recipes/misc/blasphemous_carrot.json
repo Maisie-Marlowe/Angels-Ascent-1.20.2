@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blasphemous_ingot": {
+    "has_blasphemous_nugget": {
       "conditions": {
         "items": [
           {
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blasphemous_ingot"
+      "has_blasphemous_nugget"
     ]
   ],
   "rewards": {

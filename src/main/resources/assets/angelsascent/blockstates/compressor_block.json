@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": { "model":  "angelsascent:block/compressor_block"}
+    "facing=north": { "model":  "angelsascent:block/compressor_block"},
+    "facing=east": { "model":  "angelsascent:block/compressor_block", "y": 90},
+    "facing=south": { "model":  "angelsascent:block/compressor_block", "y": 180},
+    "facing=west": { "model":  "angelsascent:block/compressor_block", "y": 270}
 
   }
 }

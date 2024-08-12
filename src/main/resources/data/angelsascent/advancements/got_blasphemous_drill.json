@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "angelsascent:blasphemous_drill"
+    },
+    "title": "Unholy Power in the Palm of Your Hand",
+    "description": "Acquired Blasphemous Drill",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_blasphemous_ingot",
+  "criteria": {
+    "got_blasphemous_drill": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:blasphemous_drill"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "got_blasphemous_drill"
+    ]
+  ]
+}

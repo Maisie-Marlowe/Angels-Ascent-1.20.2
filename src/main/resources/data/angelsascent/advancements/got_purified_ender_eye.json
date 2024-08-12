@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "angelsascent:purified_ender_eye"
+    },
+    "title": "One of Many",
+    "description": "Acquired Purified Eye of Ender",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_ultra_compressed_pearl",
+  "criteria": {
+    "got_purified_ender_eye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:purified_ender_eye"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "got_purified_ender_eye"
+    ]
+  ]
+}

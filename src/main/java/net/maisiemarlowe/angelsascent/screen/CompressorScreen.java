@@ -25,8 +25,8 @@ public class CompressorScreen extends HandledScreen<CompressorScreenHandler> {
     @Override
     protected void init() {
         super.init();
-        //titleY = 1000;
-        //playerInventoryTitleY = 1000;
+        titleY = 1000;
+        playerInventoryTitleY = 1000;
     }
 
     @Override
@@ -40,11 +40,21 @@ public class CompressorScreen extends HandledScreen<CompressorScreenHandler> {
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         renderProgressArrow(context, x, y);
+        renderFuelDisplay(context, x, y);
     }
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 85, y + 30, 176, 0, 8, handler.getScaledProgress());
+            //(x, y, u, v, width)
+            //(where we want it to be = x, y)
+            //u = offset v = where texture starts vertically
+            context.drawTexture(TEXTURE, x + 87 - 9, y + 30, 176, 14, 21, handler.getScaledProgress());
+        }
+    }
+
+    private void renderFuelDisplay(DrawContext context, int x, int y) {
+        if(handler.hasFuel()) {
+            context.drawTexture(TEXTURE, x + 57, y + 37 + 14 - 1 - handler.getScaledFuelProgress(), 176, 14 - 1 - handler.getScaledFuelProgress(), 15, handler.getScaledFuelProgress());
         }
     }
 

@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "angelsascent:holy_nugget"
+    },
+    "title": "Heavenly Metals",
+    "description": "Acquired Holy Nugget",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_soul_drill",
+  "criteria": {
+    "got_holy_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:holy_nugget"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "got_holy_nugget"
+    ]
+  ]
+}

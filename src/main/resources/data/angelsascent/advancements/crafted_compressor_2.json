@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:sticky_piston"
+    },
+    "title": "Crushable or Stickable?",
+    "description": "Crafted a Compressor using a Sticky Piston",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_purified_ender_eye",
+  "criteria": {
+    "crafted_compressor": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "angelsascent:compressor_block_recipe_2"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crafted_compressor"
+    ]
+  ],
+  "rewards": {
+    "experience": 3
+  }
+}

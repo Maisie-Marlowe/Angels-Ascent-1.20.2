@@ -1,6 +1,8 @@
 package net.maisiemarlowe.angelsascent.screen;
 
 import net.maisiemarlowe.angelsascent.block.entity.CompressorBlockEntity;
+import net.maisiemarlowe.angelsascent.screen.slot.ModFuelSlot;
+import net.maisiemarlowe.angelsascent.screen.slot.ModResultsSlot;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -20,21 +22,22 @@ public class CompressorScreenHandler extends ScreenHandler {
 
     public CompressorScreenHandler(int syncID, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncID, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(2));
+                new ArrayPropertyDelegate(3));
     }
 
 
     public CompressorScreenHandler(int syncID, PlayerInventory playerInventory,
                                    BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.COMPRESSOR_SCREEN_HANDLER, syncID);
-        checkSize(((Inventory) blockEntity), 2);
+        checkSize(((Inventory) blockEntity), 3);
         this.inventory = ((Inventory) blockEntity);
         playerInventory.onOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((CompressorBlockEntity) blockEntity);
 
         this.addSlot(new Slot(inventory, 0, 80, 11)); //input slot
-        this.addSlot(new Slot(inventory, 1, 80, 59)); //output slot
+        this.addSlot(new ModResultsSlot(inventory, 1, 80, 59)); //output slot
+        this.addSlot(new ModFuelSlot(inventory, 2, 27, 37)); //fuel slot
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -48,15 +51,26 @@ public class CompressorScreenHandler extends ScreenHandler {
         return propertyDelegate.get(0) > 0;
     }
 
+    public boolean hasFuel() {
+        return propertyDelegate.get(2) > 0;
+    }
+
 
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the width in pixels of your arrow
+        int progressArrowSize = 28; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
+    public int getScaledFuelProgress() {
+        int fuelProgress = this.propertyDelegate.get(2);
+        int maxFuelProgress = this.propertyDelegate.get(1);
+        int fuelProgressSize = 15;
+
+        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
+    }
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int invSlot) {

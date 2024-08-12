@@ -1,8 +1,8 @@
 package net.maisiemarlowe.angelsascent.block.entity;
 
 import io.wispforest.owo.util.ImplementedInventory;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.maisiemarlowe.angelsascent.item.ModItems;
 import net.maisiemarlowe.angelsascent.recipe.CompressorRecipe;
 import net.maisiemarlowe.angelsascent.screen.CompressorScreenHandler;
 import net.minecraft.block.BlockState;
@@ -13,42 +13,33 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.Optional;
 
-public class CompressorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory, GeoBlockEntity {
+public class CompressorBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
-    private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
+    private static final int FUEL_SLOT = 2;
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 360;
+    private int fuelTime = 0;
+    private int maxFuelTime = 0;
 
     public CompressorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COMPRESSOR_BLOCK_ENTITY, pos, state);
@@ -58,6 +49,8 @@ public class CompressorBlockEntity extends BlockEntity implements ExtendedScreen
                 return switch (index) {
                     case 0 -> CompressorBlockEntity.this.progress;
                     case 1 -> CompressorBlockEntity.this.maxProgress;
+                    case 2 -> CompressorBlockEntity.this.fuelTime;
+                    case 3 -> CompressorBlockEntity.this.maxFuelTime;
                     default -> 0;
                 };
             }
@@ -67,12 +60,14 @@ public class CompressorBlockEntity extends BlockEntity implements ExtendedScreen
                 switch (index) {
                     case 0 -> CompressorBlockEntity.this.progress = value;
                     case 1 -> CompressorBlockEntity.this.maxProgress = value;
+                    case 2 -> CompressorBlockEntity.this.fuelTime = value;
+                    case 3 -> CompressorBlockEntity.this.maxFuelTime = value;
                 }
             }
 
             @Override
             public int size() {
-                return 2;
+                return 3;
             }
         };
     }
@@ -87,6 +82,8 @@ public class CompressorBlockEntity extends BlockEntity implements ExtendedScreen
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("compressor_block.progress", progress);
+        nbt.putInt("compressor_block.fuelTime", fuelTime);
+        nbt.putInt("compressor_block.maxFuelTime", maxFuelTime);
     }
 
     @Override
@@ -94,12 +91,23 @@ public class CompressorBlockEntity extends BlockEntity implements ExtendedScreen
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("compressor_block.progress");
+        fuelTime = nbt.getInt("compressor_block.fuelTime");
+        maxFuelTime = nbt.getInt("compressor_block.maxFuelTime");
 
     }
 
     @Override
     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
         buf.writeBlockPos(this.pos);
+    }
+
+    private void consumeFuel() {
+        if(!getStack(2).isEmpty()) {
+            ItemStack fuelStack = this.getStack(FUEL_SLOT);
+            this.fuelTime = FuelRegistry.INSTANCE.get(this.removeStack(2, 1).getItem());
+            this.maxFuelTime = this.fuelTime;
+            fuelStack.decrement(1);
+        }
     }
 
     @Override
@@ -117,26 +125,38 @@ public class CompressorBlockEntity extends BlockEntity implements ExtendedScreen
         if (world.isClient()) {
             return;
         }
-
+        if(isConsumingFuel()) {
+            this.fuelTime--;
+        }
         if (isOutputSlotEmptyOrReceivable()) {
             if (this.hasRecipe()) {
-                this.increaseCraftProgress();
-                markDirty(world, pos, state);
+                if(hasFuelInFuelSlot() && fuelTime <= 0) {
+                    this.consumeFuel();
+                }
+                    if (this.fuelTime > 0) {
 
-                System.out.println("Progress: " + this.progress);
+                    this.increaseCraftProgress();
+                    markDirty(world, pos, state);
 
-                if (hasCraftingFinished()) {
-                    this.craftItem();
+                    //System.out.println("Progress: " + this.progress);
+
+                    if (hasCraftingFinished()) {
+                        this.craftItem();
+                        this.resetProgress();
+                    }
+                } else {
                     this.resetProgress();
                 }
             } else {
                 this.resetProgress();
+                markDirty(world, pos, state);
             }
-        } else {
-            this.resetProgress();
-            markDirty(world, pos, state);
         }
     }
+
+    private boolean hasFuelInFuelSlot() {return !this.getStack(FUEL_SLOT).isEmpty();}
+
+    private boolean isConsumingFuel() {return this.fuelTime > 0;}
 
     private void resetProgress() {
         this.progress = 0;
@@ -192,28 +212,6 @@ public class CompressorBlockEntity extends BlockEntity implements ExtendedScreen
         return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
     }
 
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
-    }
-
-    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("munch", Animation.LoopType.LOOP));
-        //System.out.println("Progress > 0: Playing 'munch' animation.");
-
-        return PlayState.CONTINUE;
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
-    }
-
-    @Override
-    public double getTick(Object blockEntity) {
-        return RenderUtils.getCurrentTick();
-    }
 
 }
 

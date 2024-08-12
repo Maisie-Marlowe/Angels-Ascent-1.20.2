@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "angelsascent:block/yellow_cobblestone",
+    "side": "angelsascent:block/yellow_cobblestone",
+    "top": "angelsascent:block/yellow_cobblestone"
+  }
+}

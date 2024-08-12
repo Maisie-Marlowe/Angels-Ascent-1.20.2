@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:orange_dye"
+    },
+    "S": {
+      "item": "minecraft:cobblestone_wall"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:orange_cobblestone_wall"
+  },
+  "show_notification": true
+}

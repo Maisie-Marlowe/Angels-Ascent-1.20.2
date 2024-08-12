@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "angelsascent:block/cyan_cobblestone",
+    "side": "angelsascent:block/cyan_cobblestone",
+    "top": "angelsascent:block/cyan_cobblestone"
+  }
+}

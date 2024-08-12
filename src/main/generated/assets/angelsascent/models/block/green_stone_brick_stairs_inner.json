@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "angelsascent:block/green_stone_bricks",
+    "side": "angelsascent:block/green_stone_bricks",
+    "top": "angelsascent:block/green_stone_bricks"
+  }
+}

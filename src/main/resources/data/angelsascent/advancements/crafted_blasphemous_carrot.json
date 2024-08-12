@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "angelsascent:blasphemous_carrot"
+    },
+    "title": "Surely this isn't safe...",
+    "description": "Crafted a Blasphemous Carrot",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_blasphemous_nugget",
+  "criteria": {
+    "crafted_blasphemous_carrot": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "angelsascent:blasphemous_carrot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crafted_blasphemous_carrot"
+    ]
+  ]
+}

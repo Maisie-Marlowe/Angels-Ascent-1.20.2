@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:white_dye"
+    },
+    "S": {
+      "item": "minecraft:stone_brick_stairs"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:white_stone_brick_stairs"
+  },
+  "show_notification": true
+}

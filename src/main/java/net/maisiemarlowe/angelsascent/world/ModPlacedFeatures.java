@@ -26,15 +26,15 @@ public class ModPlacedFeatures {
 
 
         register(context, SOUL_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SOUL_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(8, // Veins per Chunk
+                ModOrePlacement.modifiersWithCount(4, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
         register(context, HOLY_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HOLY_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(8, // Veins per Chunk
+                ModOrePlacement.modifiersWithCount(2, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
         register(context, BLASPHEMOUS_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLASPHEMOUS_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(8, // Veins per Chunk
+                ModOrePlacement.modifiersWithCount(2, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
 

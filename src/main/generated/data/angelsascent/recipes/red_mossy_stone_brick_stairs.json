@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:red_dye"
+    },
+    "S": {
+      "item": "minecraft:mossy_stone_brick_stairs"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:red_mossy_stone_brick_stairs"
+  },
+  "show_notification": true
+}

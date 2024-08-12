@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "S": {
+      "item": "minecraft:stone_pressure_plate"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:light_blue_stone_pressure_plate"
+  },
+  "show_notification": true
+}

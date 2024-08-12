@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:pink_dye"
+    },
+    "S": {
+      "item": "minecraft:mossy_stone_brick_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:pink_mossy_stone_brick_slab"
+  },
+  "show_notification": true
+}

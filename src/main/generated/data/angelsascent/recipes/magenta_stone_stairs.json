@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "minecraft:magenta_dye"
+    },
+    "S": {
+      "item": "minecraft:stone_stairs"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "angelsascent:magenta_stone_stairs"
+  },
+  "show_notification": true
+}

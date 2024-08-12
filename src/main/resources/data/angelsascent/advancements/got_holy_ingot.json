@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "angelsascent:holy_ingot"
+    },
+    "title": "Forged In Celestial Fire",
+    "description": "Acquired Holy Ingot",
+    "background": "angelsacent:textures/gui/advancements/purpur_block.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "angelsascent:got_purified_ender_eye",
+  "criteria": {
+    "got_holy_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "angelsascent:holy_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "got_holy_ingot"
+    ]
+  ]
+}

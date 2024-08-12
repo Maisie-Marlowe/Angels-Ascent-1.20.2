@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "angelsascent:block/orange_mossy_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "angelsascent:block/orange_mossy_stone_bricks"
+    },
+    "type=top": {
+      "model": "angelsascent:block/orange_mossy_stone_brick_slab_top"
+    }
+  }
+}
